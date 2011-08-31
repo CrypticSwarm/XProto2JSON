@@ -1,1288 +1,4147 @@
 {
   "CreateWindow": {
-    "field": {
-      "depth": "CARD8",
-      "wid": "WINDOW",
-      "parent": "WINDOW",
-      "x": "INT16",
-      "y": "INT16",
-      "width": "CARD16",
-      "height": "CARD16",
-      "border_width": "CARD16",
-      "class": "CARD16",
-      "visual": "VISUALID"
-    },
-    "valueparam": {
-      "value-mask-type": "CARD32",
-      "value-mask-name": "value_mask",
-      "value-list-name": "value_list"
-    }
+    "opcode": "1",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "depth",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "wid",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "parent",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "border_width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "class",
+        "enum": "WindowClass",
+        "fieldType": "field"
+      },
+      {
+        "type": "VISUALID",
+        "name": "visual",
+        "fieldType": "field"
+      },
+      {
+        "value-mask-type": "CARD32",
+        "value-mask-name": "value_mask",
+        "value-list-name": "value_list",
+        "fieldType": "valueparam"
+      }
+    ]
   },
   "ChangeWindowAttributes": {
-    "field": {
-      "window": "WINDOW"
-    },
-    "valueparam": {
-      "value-mask-type": "CARD32",
-      "value-mask-name": "value_mask",
-      "value-list-name": "value_list"
-    }
+    "opcode": "2",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "value-mask-type": "CARD32",
+        "value-mask-name": "value_mask",
+        "value-list-name": "value_list",
+        "fieldType": "valueparam"
+      }
+    ]
   },
   "GetWindowAttributes": {
-    "field": {
-      "window": "WINDOW"
-    },
-    "reply": {
-      "field": {
-        "backing_store": "CARD8",
-        "visual": "VISUALID",
-        "class": "CARD16",
-        "bit_gravity": "CARD8",
-        "win_gravity": "CARD8",
-        "backing_planes": "CARD32",
-        "backing_pixel": "CARD32",
-        "save_under": "BOOL",
-        "map_is_installed": "BOOL",
-        "map_state": "CARD8",
-        "override_redirect": "BOOL",
-        "colormap": "COLORMAP",
-        "all_event_masks": "CARD32",
-        "your_event_mask": "CARD32",
-        "do_not_propagate_mask": "CARD16"
+    "opcode": "3",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "backing_store",
+          "enum": "BackingStore",
+          "fieldType": "field"
+        },
+        {
+          "type": "VISUALID",
+          "name": "visual",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "class",
+          "enum": "WindowClass",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "bit_gravity",
+          "enum": "Gravity",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "win_gravity",
+          "enum": "Gravity",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "backing_planes",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "backing_pixel",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "save_under",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "map_is_installed",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "map_state",
+          "enum": "MapState",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "override_redirect",
+          "fieldType": "field"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "colormap",
+          "altenum": "Colormap",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "all_event_masks",
+          "mask": "EventMask",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "your_event_mask",
+          "mask": "EventMask",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "do_not_propagate_mask",
+          "mask": "EventMask",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        }
+      ]
     }
   },
   "DestroyWindow": {
-    "field": {
-      "window": "WINDOW"
-    }
+    "opcode": "4",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      }
+    ]
   },
   "DestroySubwindows": {
-    "field": {
-      "window": "WINDOW"
-    }
+    "opcode": "5",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      }
+    ]
   },
   "ChangeSaveSet": {
-    "field": {
-      "mode": "BYTE",
-      "window": "WINDOW"
-    }
+    "opcode": "6",
+    "field": [
+      {
+        "type": "BYTE",
+        "name": "mode",
+        "enum": "SetMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      }
+    ]
   },
   "ReparentWindow": {
-    "field": {
-      "window": "WINDOW",
-      "parent": "WINDOW",
-      "x": "INT16",
-      "y": "INT16"
-    }
+    "opcode": "7",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "parent",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      }
+    ]
   },
   "MapWindow": {
-    "field": {
-      "window": "WINDOW"
-    }
+    "opcode": "8",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      }
+    ]
   },
   "MapSubwindows": {
-    "field": {
-      "window": "WINDOW"
-    }
+    "opcode": "9",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      }
+    ]
   },
   "UnmapWindow": {
-    "field": {
-      "window": "WINDOW"
-    }
+    "opcode": "10",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      }
+    ]
   },
   "UnmapSubwindows": {
-    "field": {
-      "window": "WINDOW"
-    }
+    "opcode": "11",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      }
+    ]
   },
   "ConfigureWindow": {
-    "field": {
-      "window": "WINDOW",
-      "value_mask": "CARD16"
-    },
-    "valueparam": {
-      "value-mask-type": "CARD16",
-      "value-mask-name": "value_mask",
-      "value-list-name": "value_list"
-    }
+    "opcode": "12",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "value_mask",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      },
+      {
+        "value-mask-type": "CARD16",
+        "value-mask-name": "value_mask",
+        "value-list-name": "value_list",
+        "fieldType": "valueparam"
+      }
+    ]
   },
   "CirculateWindow": {
-    "field": {
-      "direction": "CARD8",
-      "window": "WINDOW"
-    }
+    "opcode": "13",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "direction",
+        "enum": "Circulate",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      }
+    ]
   },
   "GetGeometry": {
-    "field": {
-      "drawable": "DRAWABLE"
-    },
-    "reply": {
-      "field": {
-        "depth": "CARD8",
-        "root": "WINDOW",
-        "x": "INT16",
-        "y": "INT16",
-        "width": "CARD16",
-        "height": "CARD16",
-        "border_width": "CARD16"
+    "opcode": "14",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "depth",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "root",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "border_width",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        }
+      ]
     }
   },
   "QueryTree": {
-    "field": {
-      "window": "WINDOW"
-    },
-    "reply": {
-      "field": {
-        "root": "WINDOW",
-        "parent": "WINDOW",
-        "children_len": "CARD16"
+    "opcode": "15",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
       },
-      "list": {
-        "children": "WINDOW"
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "root",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "parent",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "children_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "14",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "children",
+          "fieldType": "list",
+          "fieldref": "children_len"
+        }
+      ]
     }
   },
   "InternAtom": {
-    "field": {
-      "only_if_exists": "BOOL",
-      "name_len": "CARD16"
-    },
-    "list": {
-      "name": "char"
-    },
-    "reply": {
-      "field": {
-        "atom": "ATOM"
+    "opcode": "16",
+    "field": [
+      {
+        "type": "BOOL",
+        "name": "only_if_exists",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "name_len",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      },
+      {
+        "type": "char",
+        "name": "name",
+        "fieldType": "list",
+        "fieldref": "name_len"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "ATOM",
+          "name": "atom",
+          "altenum": "Atom",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "GetAtomName": {
-    "field": {
-      "atom": "ATOM"
-    },
-    "reply": {
-      "field": {
-        "name_len": "CARD16"
+    "opcode": "17",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
       },
-      "list": {
-        "name": "char"
+      {
+        "type": "ATOM",
+        "name": "atom",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "name_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "22",
+          "fieldType": "pad"
+        },
+        {
+          "type": "char",
+          "name": "name",
+          "fieldType": "list",
+          "fieldref": "name_len"
+        }
+      ]
     }
   },
   "ChangeProperty": {
-    "field": {
-      "mode": "CARD8",
-      "window": "WINDOW",
-      "property": "ATOM",
-      "type": "ATOM",
-      "format": "CARD8",
-      "data_len": "CARD32"
-    },
-    "list": {
-      "data": "void"
-    }
+    "opcode": "18",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "mode",
+        "enum": "PropMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "property",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "type",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "format",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "3",
+        "fieldType": "pad"
+      },
+      {
+        "type": "CARD32",
+        "name": "data_len",
+        "fieldType": "field"
+      },
+      {
+        "type": "void",
+        "name": "data",
+        "fieldType": "list",
+        "op": {
+          "operation": "/",
+          "op": {
+            "operation": "*",
+            "fieldref": [
+              "data_len",
+              "format"
+            ]
+          },
+          "value": "8"
+        }
+      }
+    ]
   },
   "DeleteProperty": {
-    "field": {
-      "window": "WINDOW",
-      "property": "ATOM"
-    }
+    "opcode": "19",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "property",
+        "fieldType": "field"
+      }
+    ]
   },
   "GetProperty": {
-    "field": {
-      "delete": "BOOL",
-      "window": "WINDOW",
-      "property": "ATOM",
-      "type": "ATOM",
-      "long_offset": "CARD32",
-      "long_length": "CARD32"
-    },
-    "reply": {
-      "field": {
-        "format": "CARD8",
-        "type": "ATOM",
-        "bytes_after": "CARD32",
-        "value_len": "CARD32"
+    "opcode": "20",
+    "field": [
+      {
+        "type": "BOOL",
+        "name": "delete",
+        "fieldType": "field"
       },
-      "list": {
-        "value": "void"
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "property",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "type",
+        "altenum": "GetPropertyType",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD32",
+        "name": "long_offset",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD32",
+        "name": "long_length",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "format",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "type",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "bytes_after",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "value_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "12",
+          "fieldType": "pad"
+        },
+        {
+          "type": "void",
+          "name": "value",
+          "fieldType": "list",
+          "op": {
+            "operation": "*",
+            "fieldref": "value_len",
+            "op": {
+              "operation": "/",
+              "fieldref": "format",
+              "value": "8"
+            }
+          }
+        }
+      ]
     }
   },
   "ListProperties": {
-    "field": {
-      "window": "WINDOW"
-    },
-    "reply": {
-      "field": {
-        "atoms_len": "CARD16"
+    "opcode": "21",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
       },
-      "list": {
-        "atoms": "ATOM"
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "atoms_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "22",
+          "fieldType": "pad"
+        },
+        {
+          "type": "ATOM",
+          "name": "atoms",
+          "fieldType": "list",
+          "fieldref": "atoms_len"
+        }
+      ]
     }
   },
   "SetSelectionOwner": {
-    "field": {
-      "owner": "WINDOW",
-      "selection": "ATOM",
-      "time": "TIMESTAMP"
-    }
+    "opcode": "22",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "owner",
+        "altenum": "Window",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "selection",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "altenum": "Time",
+        "fieldType": "field"
+      }
+    ]
   },
   "GetSelectionOwner": {
-    "field": {
-      "selection": "ATOM"
-    },
-    "reply": {
-      "field": {
-        "owner": "WINDOW"
+    "opcode": "23",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "ATOM",
+        "name": "selection",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "owner",
+          "altenum": "Window",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "ConvertSelection": {
-    "field": {
-      "requestor": "WINDOW",
-      "selection": "ATOM",
-      "target": "ATOM",
-      "property": "ATOM",
-      "time": "TIMESTAMP"
-    }
+    "opcode": "24",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "requestor",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "selection",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "target",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "property",
+        "altenum": "Atom",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "altenum": "Time",
+        "fieldType": "field"
+      }
+    ]
   },
   "SendEvent": {
-    "field": {
-      "propagate": "BOOL",
-      "destination": "WINDOW",
-      "event_mask": "CARD32"
-    },
-    "list": {
-      "event": "char"
-    }
+    "opcode": "25",
+    "field": [
+      {
+        "type": "BOOL",
+        "name": "propagate",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "destination",
+        "altenum": "SendEventDest",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD32",
+        "name": "event_mask",
+        "mask": "EventMask",
+        "fieldType": "field"
+      },
+      {
+        "type": "char",
+        "name": "event",
+        "fieldType": "list",
+        "value": "32"
+      }
+    ]
   },
   "GrabPointer": {
-    "field": {
-      "owner_events": "BOOL",
-      "grab_window": "WINDOW",
-      "event_mask": "CARD16",
-      "pointer_mode": "BYTE",
-      "keyboard_mode": "BYTE",
-      "confine_to": "WINDOW",
-      "cursor": "CURSOR",
-      "time": "TIMESTAMP"
-    },
-    "reply": {
-      "field": {
-        "status": "BYTE"
+    "opcode": "26",
+    "field": [
+      {
+        "type": "BOOL",
+        "name": "owner_events",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "grab_window",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "event_mask",
+        "mask": "EventMask",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "pointer_mode",
+        "enum": "GrabMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "keyboard_mode",
+        "enum": "GrabMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "confine_to",
+        "altenum": "Window",
+        "fieldType": "field"
+      },
+      {
+        "type": "CURSOR",
+        "name": "cursor",
+        "altenum": "Cursor",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "altenum": "Time",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "status",
+          "enum": "GrabStatus",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "UngrabPointer": {
-    "field": {
-      "time": "TIMESTAMP"
-    }
+    "opcode": "27",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "altenum": "Time",
+        "fieldType": "field"
+      }
+    ]
   },
   "GrabButton": {
-    "field": {
-      "owner_events": "BOOL",
-      "grab_window": "WINDOW",
-      "event_mask": "CARD16",
-      "pointer_mode": "CARD8",
-      "keyboard_mode": "CARD8",
-      "confine_to": "WINDOW",
-      "cursor": "CURSOR",
-      "button": "CARD8",
-      "modifiers": "CARD16"
-    }
+    "opcode": "28",
+    "field": [
+      {
+        "type": "BOOL",
+        "name": "owner_events",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "grab_window",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "event_mask",
+        "mask": "EventMask",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "pointer_mode",
+        "enum": "GrabMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "keyboard_mode",
+        "enum": "GrabMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "confine_to",
+        "altenum": "Window",
+        "fieldType": "field"
+      },
+      {
+        "type": "CURSOR",
+        "name": "cursor",
+        "altenum": "Cursor",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "button",
+        "enum": "ButtonIndex",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "CARD16",
+        "name": "modifiers",
+        "mask": "ModMask",
+        "fieldType": "field"
+      }
+    ]
   },
   "UngrabButton": {
-    "field": {
-      "button": "CARD8",
-      "grab_window": "WINDOW",
-      "modifiers": "CARD16"
-    }
+    "opcode": "29",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "button",
+        "enum": "ButtonIndex",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "grab_window",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "modifiers",
+        "mask": "ModMask",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      }
+    ]
   },
   "ChangeActivePointerGrab": {
-    "field": {
-      "cursor": "CURSOR",
-      "time": "TIMESTAMP",
-      "event_mask": "CARD16"
-    }
+    "opcode": "30",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "CURSOR",
+        "name": "cursor",
+        "altenum": "Cursor",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "altenum": "Time",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "event_mask",
+        "mask": "EventMask",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      }
+    ]
   },
   "GrabKeyboard": {
-    "field": {
-      "owner_events": "BOOL",
-      "grab_window": "WINDOW",
-      "time": "TIMESTAMP",
-      "pointer_mode": "BYTE",
-      "keyboard_mode": "BYTE"
-    },
-    "reply": {
-      "field": {
-        "status": "BYTE"
+    "opcode": "31",
+    "field": [
+      {
+        "type": "BOOL",
+        "name": "owner_events",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "grab_window",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "altenum": "Time",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "pointer_mode",
+        "enum": "GrabMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "keyboard_mode",
+        "enum": "GrabMode",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "status",
+          "enum": "GrabStatus",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "UngrabKeyboard": {
-    "field": {
-      "time": "TIMESTAMP"
-    }
+    "opcode": "32",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "altenum": "Time",
+        "fieldType": "field"
+      }
+    ]
   },
   "GrabKey": {
-    "field": {
-      "owner_events": "BOOL",
-      "grab_window": "WINDOW",
-      "modifiers": "CARD16",
-      "key": "KEYCODE",
-      "pointer_mode": "CARD8",
-      "keyboard_mode": "CARD8"
-    }
+    "opcode": "33",
+    "field": [
+      {
+        "type": "BOOL",
+        "name": "owner_events",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "grab_window",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "modifiers",
+        "mask": "ModMask",
+        "fieldType": "field"
+      },
+      {
+        "type": "KEYCODE",
+        "name": "key",
+        "altenum": "Grab",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "pointer_mode",
+        "enum": "GrabMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "keyboard_mode",
+        "enum": "GrabMode",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "3",
+        "fieldType": "pad"
+      }
+    ]
   },
   "UngrabKey": {
-    "field": {
-      "key": "KEYCODE",
-      "grab_window": "WINDOW",
-      "modifiers": "CARD16"
-    }
+    "opcode": "34",
+    "field": [
+      {
+        "type": "KEYCODE",
+        "name": "key",
+        "altenum": "Grab",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "grab_window",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "modifiers",
+        "mask": "ModMask",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      }
+    ]
   },
   "AllowEvents": {
-    "field": {
-      "mode": "CARD8",
-      "time": "TIMESTAMP"
-    }
-  },
-  "GrabServer": {},
-  "UngrabServer": {},
-  "QueryPointer": {
-    "field": {
-      "window": "WINDOW"
-    },
-    "reply": {
-      "field": {
-        "same_screen": "BOOL",
-        "root": "WINDOW",
-        "child": "WINDOW",
-        "root_x": "INT16",
-        "root_y": "INT16",
-        "win_x": "INT16",
-        "win_y": "INT16",
-        "mask": "CARD16"
+    "opcode": "35",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "mode",
+        "enum": "Allow",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "altenum": "Time",
+        "fieldType": "field"
       }
+    ]
+  },
+  "GrabServer": {
+    "opcode": "36"
+  },
+  "UngrabServer": {
+    "opcode": "37"
+  },
+  "QueryPointer": {
+    "opcode": "38",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "same_screen",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "root",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "child",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "root_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "root_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "win_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "win_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "mask",
+          "mask": "KeyButMask",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        }
+      ]
     }
   },
   "GetMotionEvents": {
-    "field": {
-      "window": "WINDOW",
-      "start": "TIMESTAMP",
-      "stop": "TIMESTAMP"
-    },
-    "reply": {
-      "field": {
-        "events_len": "CARD32"
+    "opcode": "39",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
       },
-      "list": {
-        "events": "TIMECOORD"
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "start",
+        "altenum": "Time",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "stop",
+        "altenum": "Time",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD32",
+          "name": "events_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "20",
+          "fieldType": "pad"
+        },
+        {
+          "type": "TIMECOORD",
+          "name": "events",
+          "fieldType": "list",
+          "fieldref": "events_len"
+        }
+      ]
     }
   },
   "TranslateCoordinates": {
-    "field": {
-      "src_window": "WINDOW",
-      "dst_window": "WINDOW",
-      "src_x": "INT16",
-      "src_y": "INT16"
-    },
-    "reply": {
-      "field": {
-        "same_screen": "BOOL",
-        "child": "WINDOW",
-        "dst_x": "INT16",
-        "dst_y": "INT16"
+    "opcode": "40",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "src_window",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "dst_window",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "src_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "src_y",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "same_screen",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "child",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "dst_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "dst_y",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "WarpPointer": {
-    "field": {
-      "src_window": "WINDOW",
-      "dst_window": "WINDOW",
-      "src_x": "INT16",
-      "src_y": "INT16",
-      "src_width": "CARD16",
-      "src_height": "CARD16",
-      "dst_x": "INT16",
-      "dst_y": "INT16"
-    }
+    "opcode": "41",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "src_window",
+        "altenum": "Window",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "dst_window",
+        "altenum": "Window",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "src_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "src_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "src_width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "src_height",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "dst_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "dst_y",
+        "fieldType": "field"
+      }
+    ]
   },
   "SetInputFocus": {
-    "field": {
-      "revert_to": "CARD8",
-      "focus": "WINDOW",
-      "time": "TIMESTAMP"
-    }
+    "opcode": "42",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "revert_to",
+        "enum": "InputFocus",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "focus",
+        "altenum": "InputFocus",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "altenum": "Time",
+        "fieldType": "field"
+      }
+    ]
   },
   "GetInputFocus": {
+    "opcode": "43",
     "reply": {
-      "field": {
-        "revert_to": "CARD8",
-        "focus": "WINDOW"
-      }
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "revert_to",
+          "enum": "InputFocus",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "focus",
+          "altenum": "InputFocus",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "QueryKeymap": {
+    "opcode": "44",
     "reply": {
-      "list": {
-        "keys": "CARD8"
-      }
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD8",
+          "name": "keys",
+          "fieldType": "list",
+          "value": "32"
+        }
+      ]
     }
   },
   "OpenFont": {
-    "field": {
-      "fid": "FONT",
-      "name_len": "CARD16"
-    },
-    "list": {
-      "name": "char"
-    }
+    "opcode": "45",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "FONT",
+        "name": "fid",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "name_len",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      },
+      {
+        "type": "char",
+        "name": "name",
+        "fieldType": "list",
+        "fieldref": "name_len"
+      }
+    ]
   },
   "CloseFont": {
-    "field": {
-      "font": "FONT"
-    }
+    "opcode": "46",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "FONT",
+        "name": "font",
+        "fieldType": "field"
+      }
+    ]
   },
   "QueryFont": {
-    "field": {
-      "font": "FONTABLE"
-    },
-    "reply": {
-      "field": {
-        "min_bounds": "CHARINFO",
-        "max_bounds": "CHARINFO",
-        "min_char_or_byte2": "CARD16",
-        "max_char_or_byte2": "CARD16",
-        "default_char": "CARD16",
-        "properties_len": "CARD16",
-        "draw_direction": "BYTE",
-        "min_byte1": "CARD8",
-        "max_byte1": "CARD8",
-        "all_chars_exist": "BOOL",
-        "font_ascent": "INT16",
-        "font_descent": "INT16",
-        "char_infos_len": "CARD32"
+    "opcode": "47",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
       },
-      "list": {
-        "properties": "FONTPROP",
-        "char_infos": "CHARINFO"
+      {
+        "type": "FONTABLE",
+        "name": "font",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CHARINFO",
+          "name": "min_bounds",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "4",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CHARINFO",
+          "name": "max_bounds",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "4",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "min_char_or_byte2",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "max_char_or_byte2",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "default_char",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "properties_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "draw_direction",
+          "enum": "FontDraw",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "min_byte1",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "max_byte1",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "all_chars_exist",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "font_ascent",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "font_descent",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "char_infos_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "FONTPROP",
+          "name": "properties",
+          "fieldType": "list",
+          "fieldref": "properties_len"
+        },
+        {
+          "type": "CHARINFO",
+          "name": "char_infos",
+          "fieldType": "list",
+          "fieldref": "char_infos_len"
+        }
+      ]
     }
   },
   "QueryTextExtents": {
-    "exprfield": {
-      "type": "BOOL",
-      "name": "odd_length"
-    },
-    "field": {
-      "font": "FONTABLE"
-    },
-    "list": {
-      "string": "CHAR2B"
-    },
-    "reply": {
-      "field": {
-        "draw_direction": "BYTE",
-        "font_ascent": "INT16",
-        "font_descent": "INT16",
-        "overall_ascent": "INT16",
-        "overall_descent": "INT16",
-        "overall_width": "INT32",
-        "overall_left": "INT32",
-        "overall_right": "INT32"
+    "opcode": "48",
+    "field": [
+      {
+        "type": "BOOL",
+        "name": "odd_length",
+        "fieldType": "exprfield",
+        "op": {
+          "operation": "&amp;",
+          "fieldref": "string_len",
+          "value": "1"
+        }
+      },
+      {
+        "type": "FONTABLE",
+        "name": "font",
+        "fieldType": "field"
+      },
+      {
+        "type": "CHAR2B",
+        "name": "string",
+        "fieldType": "list"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "draw_direction",
+          "enum": "FontDraw",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "font_ascent",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "font_descent",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "overall_ascent",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "overall_descent",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT32",
+          "name": "overall_width",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT32",
+          "name": "overall_left",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT32",
+          "name": "overall_right",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "ListFonts": {
-    "field": {
-      "max_names": "CARD16",
-      "pattern_len": "CARD16"
-    },
-    "list": {
-      "pattern": "char"
-    },
-    "reply": {
-      "field": {
-        "names_len": "CARD16"
+    "opcode": "49",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
       },
-      "list": {
-        "names": "STR"
+      {
+        "type": "CARD16",
+        "name": "max_names",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "pattern_len",
+        "fieldType": "field"
+      },
+      {
+        "type": "char",
+        "name": "pattern",
+        "fieldType": "list",
+        "fieldref": "pattern_len"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "names_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "22",
+          "fieldType": "pad"
+        },
+        {
+          "type": "STR",
+          "name": "names",
+          "fieldType": "list",
+          "fieldref": "names_len"
+        }
+      ]
     }
   },
   "ListFontsWithInfo": {
-    "field": {
-      "max_names": "CARD16",
-      "pattern_len": "CARD16"
-    },
-    "list": {
-      "pattern": "char"
-    },
-    "reply": {
-      "field": {
-        "name_len": "CARD8",
-        "min_bounds": "CHARINFO",
-        "max_bounds": "CHARINFO",
-        "min_char_or_byte2": "CARD16",
-        "max_char_or_byte2": "CARD16",
-        "default_char": "CARD16",
-        "properties_len": "CARD16",
-        "draw_direction": "BYTE",
-        "min_byte1": "CARD8",
-        "max_byte1": "CARD8",
-        "all_chars_exist": "BOOL",
-        "font_ascent": "INT16",
-        "font_descent": "INT16",
-        "replies_hint": "CARD32"
+    "opcode": "50",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
       },
-      "list": {
-        "properties": "FONTPROP",
-        "name": "char"
+      {
+        "type": "CARD16",
+        "name": "max_names",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "pattern_len",
+        "fieldType": "field"
+      },
+      {
+        "type": "char",
+        "name": "pattern",
+        "fieldType": "list",
+        "fieldref": "pattern_len"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "name_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "CHARINFO",
+          "name": "min_bounds",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "4",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CHARINFO",
+          "name": "max_bounds",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "4",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "min_char_or_byte2",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "max_char_or_byte2",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "default_char",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "properties_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "draw_direction",
+          "enum": "FontDraw",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "min_byte1",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "max_byte1",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "all_chars_exist",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "font_ascent",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "font_descent",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "replies_hint",
+          "fieldType": "field"
+        },
+        {
+          "type": "FONTPROP",
+          "name": "properties",
+          "fieldType": "list",
+          "fieldref": "properties_len"
+        },
+        {
+          "type": "char",
+          "name": "name",
+          "fieldType": "list",
+          "fieldref": "name_len"
+        }
+      ]
     }
   },
   "SetFontPath": {
-    "field": {
-      "font_qty": "CARD16"
-    },
-    "list": {
-      "path": "char"
-    }
+    "opcode": "51",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "CARD16",
+        "name": "font_qty",
+        "fieldType": "field"
+      },
+      {
+        "type": "char",
+        "name": "path",
+        "fieldType": "list"
+      }
+    ]
   },
   "GetFontPath": {
+    "opcode": "52",
     "reply": {
-      "field": {
-        "path_len": "CARD16"
-      },
-      "list": {
-        "path": "STR"
-      }
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "path_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "22",
+          "fieldType": "pad"
+        },
+        {
+          "type": "STR",
+          "name": "path",
+          "fieldType": "list",
+          "fieldref": "path_len"
+        }
+      ]
     }
   },
   "CreatePixmap": {
-    "field": {
-      "depth": "CARD8",
-      "pid": "PIXMAP",
-      "drawable": "DRAWABLE",
-      "width": "CARD16",
-      "height": "CARD16"
-    }
+    "opcode": "53",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "depth",
+        "fieldType": "field"
+      },
+      {
+        "type": "PIXMAP",
+        "name": "pid",
+        "fieldType": "field"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      }
+    ]
   },
   "FreePixmap": {
-    "field": {
-      "pixmap": "PIXMAP"
-    }
+    "opcode": "54",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "PIXMAP",
+        "name": "pixmap",
+        "fieldType": "field"
+      }
+    ]
   },
   "CreateGC": {
-    "field": {
-      "cid": "GCONTEXT",
-      "drawable": "DRAWABLE"
-    },
-    "valueparam": {
-      "value-mask-type": "CARD32",
-      "value-mask-name": "value_mask",
-      "value-list-name": "value_list"
-    }
+    "opcode": "55",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "cid",
+        "fieldType": "field"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "value-mask-type": "CARD32",
+        "value-mask-name": "value_mask",
+        "value-list-name": "value_list",
+        "fieldType": "valueparam"
+      }
+    ]
   },
   "ChangeGC": {
-    "field": {
-      "gc": "GCONTEXT"
-    },
-    "valueparam": {
-      "value-mask-type": "CARD32",
-      "value-mask-name": "value_mask",
-      "value-list-name": "value_list"
-    }
+    "opcode": "56",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "value-mask-type": "CARD32",
+        "value-mask-name": "value_mask",
+        "value-list-name": "value_list",
+        "fieldType": "valueparam"
+      }
+    ]
   },
   "CopyGC": {
-    "field": {
-      "src_gc": "GCONTEXT",
-      "dst_gc": "GCONTEXT",
-      "value_mask": "CARD32"
-    }
+    "opcode": "57",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "src_gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "dst_gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD32",
+        "name": "value_mask",
+        "mask": "GC",
+        "fieldType": "field"
+      }
+    ]
   },
   "SetDashes": {
-    "field": {
-      "gc": "GCONTEXT",
-      "dash_offset": "CARD16",
-      "dashes_len": "CARD16"
-    },
-    "list": {
-      "dashes": "CARD8"
-    }
+    "opcode": "58",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "dash_offset",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "dashes_len",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "dashes",
+        "fieldType": "list",
+        "fieldref": "dashes_len"
+      }
+    ]
   },
   "SetClipRectangles": {
-    "field": {
-      "ordering": "BYTE",
-      "gc": "GCONTEXT",
-      "clip_x_origin": "INT16",
-      "clip_y_origin": "INT16"
-    },
-    "list": {
-      "rectangles": "RECTANGLE"
-    }
+    "opcode": "59",
+    "field": [
+      {
+        "type": "BYTE",
+        "name": "ordering",
+        "enum": "ClipOrdering",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "clip_x_origin",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "clip_y_origin",
+        "fieldType": "field"
+      },
+      {
+        "type": "RECTANGLE",
+        "name": "rectangles",
+        "fieldType": "list"
+      }
+    ]
   },
   "FreeGC": {
-    "field": {
-      "gc": "GCONTEXT"
-    }
+    "opcode": "60",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      }
+    ]
   },
   "ClearArea": {
-    "field": {
-      "exposures": "BOOL",
-      "window": "WINDOW",
-      "x": "INT16",
-      "y": "INT16",
-      "width": "CARD16",
-      "height": "CARD16"
-    }
+    "opcode": "61",
+    "field": [
+      {
+        "type": "BOOL",
+        "name": "exposures",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      }
+    ]
   },
   "CopyArea": {
-    "field": {
-      "src_drawable": "DRAWABLE",
-      "dst_drawable": "DRAWABLE",
-      "gc": "GCONTEXT",
-      "src_x": "INT16",
-      "src_y": "INT16",
-      "dst_x": "INT16",
-      "dst_y": "INT16",
-      "width": "CARD16",
-      "height": "CARD16"
-    }
+    "opcode": "62",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "src_drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "dst_drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "src_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "src_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "dst_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "dst_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      }
+    ]
   },
   "CopyPlane": {
-    "field": {
-      "src_drawable": "DRAWABLE",
-      "dst_drawable": "DRAWABLE",
-      "gc": "GCONTEXT",
-      "src_x": "INT16",
-      "src_y": "INT16",
-      "dst_x": "INT16",
-      "dst_y": "INT16",
-      "width": "CARD16",
-      "height": "CARD16",
-      "bit_plane": "CARD32"
-    }
+    "opcode": "63",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "src_drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "dst_drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "src_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "src_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "dst_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "dst_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD32",
+        "name": "bit_plane",
+        "fieldType": "field"
+      }
+    ]
   },
   "PolyPoint": {
-    "field": {
-      "coordinate_mode": "BYTE",
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT"
-    },
-    "list": {
-      "points": "POINT"
-    }
+    "opcode": "64",
+    "field": [
+      {
+        "type": "BYTE",
+        "name": "coordinate_mode",
+        "enum": "CoordMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "POINT",
+        "name": "points",
+        "fieldType": "list"
+      }
+    ]
   },
   "PolyLine": {
-    "field": {
-      "coordinate_mode": "BYTE",
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT"
-    },
-    "list": {
-      "points": "POINT"
-    },
-    "combine-adjacent": "true"
+    "opcode": "65",
+    "combine-adjacent": "true",
+    "field": [
+      {
+        "type": "BYTE",
+        "name": "coordinate_mode",
+        "enum": "CoordMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "POINT",
+        "name": "points",
+        "fieldType": "list"
+      }
+    ]
   },
   "PolySegment": {
-    "field": {
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT"
-    },
-    "list": {
-      "segments": "SEGMENT"
-    },
-    "combine-adjacent": "true"
+    "opcode": "66",
+    "combine-adjacent": "true",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "SEGMENT",
+        "name": "segments",
+        "fieldType": "list"
+      }
+    ]
   },
   "PolyRectangle": {
-    "field": {
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT"
-    },
-    "list": {
-      "rectangles": "RECTANGLE"
-    },
-    "combine-adjacent": "true"
+    "opcode": "67",
+    "combine-adjacent": "true",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "RECTANGLE",
+        "name": "rectangles",
+        "fieldType": "list"
+      }
+    ]
   },
   "PolyArc": {
-    "field": {
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT"
-    },
-    "list": {
-      "arcs": "ARC"
-    }
+    "opcode": "68",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "ARC",
+        "name": "arcs",
+        "fieldType": "list"
+      }
+    ]
   },
   "FillPoly": {
-    "field": {
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT",
-      "shape": "CARD8",
-      "coordinate_mode": "CARD8"
-    },
-    "list": {
-      "points": "POINT"
-    }
+    "opcode": "69",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "shape",
+        "enum": "PolyShape",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "coordinate_mode",
+        "enum": "CoordMode",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      },
+      {
+        "type": "POINT",
+        "name": "points",
+        "fieldType": "list"
+      }
+    ]
   },
   "PolyFillRectangle": {
-    "field": {
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT"
-    },
-    "list": {
-      "rectangles": "RECTANGLE"
-    },
-    "combine-adjacent": "true"
+    "opcode": "70",
+    "combine-adjacent": "true",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "RECTANGLE",
+        "name": "rectangles",
+        "fieldType": "list"
+      }
+    ]
   },
   "PolyFillArc": {
-    "field": {
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT"
-    },
-    "list": {
-      "arcs": "ARC"
-    },
-    "combine-adjacent": "true"
+    "opcode": "71",
+    "combine-adjacent": "true",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "ARC",
+        "name": "arcs",
+        "fieldType": "list"
+      }
+    ]
   },
   "PutImage": {
-    "field": {
-      "format": "CARD8",
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT",
-      "width": "CARD16",
-      "height": "CARD16",
-      "dst_x": "INT16",
-      "dst_y": "INT16",
-      "left_pad": "CARD8",
-      "depth": "CARD8"
-    },
-    "list": {
-      "data": "BYTE"
-    }
+    "opcode": "72",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "format",
+        "enum": "ImageFormat",
+        "fieldType": "field"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "dst_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "dst_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "left_pad",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "depth",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      },
+      {
+        "type": "BYTE",
+        "name": "data",
+        "fieldType": "list"
+      }
+    ]
   },
   "GetImage": {
-    "field": {
-      "format": "CARD8",
-      "drawable": "DRAWABLE",
-      "x": "INT16",
-      "y": "INT16",
-      "width": "CARD16",
-      "height": "CARD16",
-      "plane_mask": "CARD32"
-    },
-    "reply": {
-      "field": {
-        "depth": "CARD8",
-        "visual": "VISUALID"
+    "opcode": "73",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "format",
+        "enum": "ImageFormat",
+        "fieldType": "field"
       },
-      "list": {
-        "data": "BYTE"
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD32",
+        "name": "plane_mask",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "depth",
+          "fieldType": "field"
+        },
+        {
+          "type": "VISUALID",
+          "name": "visual",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "20",
+          "fieldType": "pad"
+        },
+        {
+          "type": "BYTE",
+          "name": "data",
+          "fieldType": "list",
+          "op": {
+            "operation": "*",
+            "fieldref": "length",
+            "value": "4"
+          }
+        }
+      ]
     }
   },
   "PolyText8": {
-    "field": {
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT",
-      "x": "INT16",
-      "y": "INT16"
-    },
-    "list": {
-      "items": "BYTE"
-    }
+    "opcode": "74",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "items",
+        "fieldType": "list"
+      }
+    ]
   },
   "PolyText16": {
-    "field": {
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT",
-      "x": "INT16",
-      "y": "INT16"
-    },
-    "list": {
-      "items": "BYTE"
-    }
+    "opcode": "75",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "items",
+        "fieldType": "list"
+      }
+    ]
   },
   "ImageText8": {
-    "field": {
-      "string_len": "BYTE",
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT",
-      "x": "INT16",
-      "y": "INT16"
-    },
-    "list": {
-      "string": "char"
-    }
+    "opcode": "76",
+    "field": [
+      {
+        "type": "BYTE",
+        "name": "string_len",
+        "fieldType": "field"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "char",
+        "name": "string",
+        "fieldType": "list",
+        "fieldref": "string_len"
+      }
+    ]
   },
   "ImageText16": {
-    "field": {
-      "string_len": "BYTE",
-      "drawable": "DRAWABLE",
-      "gc": "GCONTEXT",
-      "x": "INT16",
-      "y": "INT16"
-    },
-    "list": {
-      "string": "CHAR2B"
-    }
+    "opcode": "77",
+    "field": [
+      {
+        "type": "BYTE",
+        "name": "string_len",
+        "fieldType": "field"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "GCONTEXT",
+        "name": "gc",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CHAR2B",
+        "name": "string",
+        "fieldType": "list",
+        "fieldref": "string_len"
+      }
+    ]
   },
   "CreateColormap": {
-    "field": {
-      "alloc": "BYTE",
-      "mid": "COLORMAP",
-      "window": "WINDOW",
-      "visual": "VISUALID"
-    }
+    "opcode": "78",
+    "field": [
+      {
+        "type": "BYTE",
+        "name": "alloc",
+        "enum": "ColormapAlloc",
+        "fieldType": "field"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "mid",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "VISUALID",
+        "name": "visual",
+        "fieldType": "field"
+      }
+    ]
   },
   "FreeColormap": {
-    "field": {
-      "cmap": "COLORMAP"
-    }
+    "opcode": "79",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      }
+    ]
   },
   "CopyColormapAndFree": {
-    "field": {
-      "mid": "COLORMAP",
-      "src_cmap": "COLORMAP"
-    }
+    "opcode": "80",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "mid",
+        "fieldType": "field"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "src_cmap",
+        "fieldType": "field"
+      }
+    ]
   },
   "InstallColormap": {
-    "field": {
-      "cmap": "COLORMAP"
-    }
+    "opcode": "81",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      }
+    ]
   },
   "UninstallColormap": {
-    "field": {
-      "cmap": "COLORMAP"
-    }
+    "opcode": "82",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      }
+    ]
   },
   "ListInstalledColormaps": {
-    "field": {
-      "window": "WINDOW"
-    },
-    "reply": {
-      "field": {
-        "cmaps_len": "CARD16"
+    "opcode": "83",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
       },
-      "list": {
-        "cmaps": "COLORMAP"
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "cmaps_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "22",
+          "fieldType": "pad"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmaps",
+          "fieldType": "list",
+          "fieldref": "cmaps_len"
+        }
+      ]
     }
   },
   "AllocColor": {
-    "field": {
-      "cmap": "COLORMAP",
-      "red": "CARD16",
-      "green": "CARD16",
-      "blue": "CARD16"
-    },
-    "reply": {
-      "field": {
-        "red": "CARD16",
-        "green": "CARD16",
-        "blue": "CARD16",
-        "pixel": "CARD32"
+    "opcode": "84",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "red",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "green",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "blue",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "blue",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD32",
+          "name": "pixel",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "AllocNamedColor": {
-    "field": {
-      "cmap": "COLORMAP",
-      "name_len": "CARD16"
-    },
-    "list": {
-      "name": "char"
-    },
-    "reply": {
-      "field": {
-        "pixel": "CARD32",
-        "exact_red": "CARD16",
-        "exact_green": "CARD16",
-        "exact_blue": "CARD16",
-        "visual_red": "CARD16",
-        "visual_green": "CARD16",
-        "visual_blue": "CARD16"
+    "opcode": "85",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "name_len",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      },
+      {
+        "type": "char",
+        "name": "name",
+        "fieldType": "list",
+        "fieldref": "name_len"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD32",
+          "name": "pixel",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "exact_red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "exact_green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "exact_blue",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "visual_red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "visual_green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "visual_blue",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "AllocColorCells": {
-    "field": {
-      "contiguous": "BOOL",
-      "cmap": "COLORMAP",
-      "colors": "CARD16",
-      "planes": "CARD16"
-    },
-    "reply": {
-      "field": {
-        "pixels_len": "CARD16",
-        "masks_len": "CARD16"
+    "opcode": "86",
+    "field": [
+      {
+        "type": "BOOL",
+        "name": "contiguous",
+        "fieldType": "field"
       },
-      "list": {
-        "pixels": "CARD32",
-        "masks": "CARD32"
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "colors",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "planes",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "pixels_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "masks_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "20",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD32",
+          "name": "pixels",
+          "fieldType": "list",
+          "fieldref": "pixels_len"
+        },
+        {
+          "type": "CARD32",
+          "name": "masks",
+          "fieldType": "list",
+          "fieldref": "masks_len"
+        }
+      ]
     }
   },
   "AllocColorPlanes": {
-    "field": {
-      "contiguous": "BOOL",
-      "cmap": "COLORMAP",
-      "colors": "CARD16",
-      "reds": "CARD16",
-      "greens": "CARD16",
-      "blues": "CARD16"
-    },
-    "reply": {
-      "field": {
-        "pixels_len": "CARD16",
-        "red_mask": "CARD32",
-        "green_mask": "CARD32",
-        "blue_mask": "CARD32"
+    "opcode": "87",
+    "field": [
+      {
+        "type": "BOOL",
+        "name": "contiguous",
+        "fieldType": "field"
       },
-      "list": {
-        "pixels": "CARD32"
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "colors",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "reds",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "greens",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "blues",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "pixels_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD32",
+          "name": "red_mask",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "green_mask",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "blue_mask",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "8",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD32",
+          "name": "pixels",
+          "fieldType": "list",
+          "fieldref": "pixels_len"
+        }
+      ]
     }
   },
   "FreeColors": {
-    "field": {
-      "cmap": "COLORMAP",
-      "plane_mask": "CARD32"
-    },
-    "list": {
-      "pixels": "CARD32"
-    }
+    "opcode": "88",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD32",
+        "name": "plane_mask",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD32",
+        "name": "pixels",
+        "fieldType": "list"
+      }
+    ]
   },
   "StoreColors": {
-    "field": {
-      "cmap": "COLORMAP"
-    },
-    "list": {
-      "items": "COLORITEM"
-    },
-    "combine-adjacent": "true"
+    "opcode": "89",
+    "combine-adjacent": "true",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      },
+      {
+        "type": "COLORITEM",
+        "name": "items",
+        "fieldType": "list"
+      }
+    ]
   },
   "StoreNamedColor": {
-    "field": {
-      "flags": "CARD8",
-      "cmap": "COLORMAP",
-      "pixel": "CARD32",
-      "name_len": "CARD16"
-    },
-    "list": {
-      "name": "char"
-    }
+    "opcode": "90",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "flags",
+        "mask": "ColorFlag",
+        "fieldType": "field"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD32",
+        "name": "pixel",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "name_len",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      },
+      {
+        "type": "char",
+        "name": "name",
+        "fieldType": "list",
+        "fieldref": "name_len"
+      }
+    ]
   },
   "QueryColors": {
-    "field": {
-      "cmap": "COLORMAP"
-    },
-    "list": {
-      "pixels": "CARD32"
-    },
-    "reply": {
-      "field": {
-        "colors_len": "CARD16"
+    "opcode": "91",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
       },
-      "list": {
-        "colors": "RGB"
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD32",
+        "name": "pixels",
+        "fieldType": "list"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "colors_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "22",
+          "fieldType": "pad"
+        },
+        {
+          "type": "RGB",
+          "name": "colors",
+          "fieldType": "list",
+          "fieldref": "colors_len"
+        }
+      ]
     }
   },
   "LookupColor": {
-    "field": {
-      "cmap": "COLORMAP",
-      "name_len": "CARD16"
-    },
-    "list": {
-      "name": "char"
-    },
-    "reply": {
-      "field": {
-        "exact_red": "CARD16",
-        "exact_green": "CARD16",
-        "exact_blue": "CARD16",
-        "visual_red": "CARD16",
-        "visual_green": "CARD16",
-        "visual_blue": "CARD16"
+    "opcode": "92",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "cmap",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "name_len",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      },
+      {
+        "type": "char",
+        "name": "name",
+        "fieldType": "list",
+        "fieldref": "name_len"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "exact_red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "exact_green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "exact_blue",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "visual_red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "visual_green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "visual_blue",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "CreateCursor": {
-    "field": {
-      "cid": "CURSOR",
-      "source": "PIXMAP",
-      "mask": "PIXMAP",
-      "fore_red": "CARD16",
-      "fore_green": "CARD16",
-      "fore_blue": "CARD16",
-      "back_red": "CARD16",
-      "back_green": "CARD16",
-      "back_blue": "CARD16",
-      "x": "CARD16",
-      "y": "CARD16"
-    }
+    "opcode": "93",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "CURSOR",
+        "name": "cid",
+        "fieldType": "field"
+      },
+      {
+        "type": "PIXMAP",
+        "name": "source",
+        "fieldType": "field"
+      },
+      {
+        "type": "PIXMAP",
+        "name": "mask",
+        "altenum": "Pixmap",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "fore_red",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "fore_green",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "fore_blue",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "back_red",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "back_green",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "back_blue",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "y",
+        "fieldType": "field"
+      }
+    ]
   },
   "CreateGlyphCursor": {
-    "field": {
-      "cid": "CURSOR",
-      "source_font": "FONT",
-      "mask_font": "FONT",
-      "source_char": "CARD16",
-      "mask_char": "CARD16",
-      "fore_red": "CARD16",
-      "fore_green": "CARD16",
-      "fore_blue": "CARD16",
-      "back_red": "CARD16",
-      "back_green": "CARD16",
-      "back_blue": "CARD16"
-    }
+    "opcode": "94",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "CURSOR",
+        "name": "cid",
+        "fieldType": "field"
+      },
+      {
+        "type": "FONT",
+        "name": "source_font",
+        "fieldType": "field"
+      },
+      {
+        "type": "FONT",
+        "name": "mask_font",
+        "altenum": "Font",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "source_char",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "mask_char",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "fore_red",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "fore_green",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "fore_blue",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "back_red",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "back_green",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "back_blue",
+        "fieldType": "field"
+      }
+    ]
   },
   "FreeCursor": {
-    "field": {
-      "cursor": "CURSOR"
-    }
+    "opcode": "95",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "CURSOR",
+        "name": "cursor",
+        "fieldType": "field"
+      }
+    ]
   },
   "RecolorCursor": {
-    "field": {
-      "cursor": "CURSOR",
-      "fore_red": "CARD16",
-      "fore_green": "CARD16",
-      "fore_blue": "CARD16",
-      "back_red": "CARD16",
-      "back_green": "CARD16",
-      "back_blue": "CARD16"
-    }
+    "opcode": "96",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "CURSOR",
+        "name": "cursor",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "fore_red",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "fore_green",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "fore_blue",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "back_red",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "back_green",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "back_blue",
+        "fieldType": "field"
+      }
+    ]
   },
   "QueryBestSize": {
-    "field": {
-      "class": "CARD8",
-      "drawable": "DRAWABLE",
-      "width": "CARD16",
-      "height": "CARD16"
-    },
-    "reply": {
-      "field": {
-        "width": "CARD16",
-        "height": "CARD16"
+    "opcode": "97",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "class",
+        "enum": "QueryShapeOf",
+        "fieldType": "field"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "QueryExtension": {
-    "field": {
-      "name_len": "CARD16"
-    },
-    "list": {
-      "name": "char"
-    },
-    "reply": {
-      "field": {
-        "present": "BOOL",
-        "major_opcode": "CARD8",
-        "first_event": "CARD8",
-        "first_error": "CARD8"
+    "opcode": "98",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "CARD16",
+        "name": "name_len",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      },
+      {
+        "type": "char",
+        "name": "name",
+        "fieldType": "list",
+        "fieldref": "name_len"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "BOOL",
+          "name": "present",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "major_opcode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "first_event",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "first_error",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "ListExtensions": {
+    "opcode": "99",
     "reply": {
-      "field": {
-        "names_len": "CARD8"
-      },
-      "list": {
-        "names": "STR"
-      }
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "names_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "24",
+          "fieldType": "pad"
+        },
+        {
+          "type": "STR",
+          "name": "names",
+          "fieldType": "list",
+          "fieldref": "names_len"
+        }
+      ]
     }
   },
   "ChangeKeyboardMapping": {
-    "field": {
-      "keycode_count": "CARD8",
-      "first_keycode": "KEYCODE",
-      "keysyms_per_keycode": "CARD8"
-    },
-    "list": {
-      "keysyms": "KEYSYM"
-    }
+    "opcode": "100",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "keycode_count",
+        "fieldType": "field"
+      },
+      {
+        "type": "KEYCODE",
+        "name": "first_keycode",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "keysyms_per_keycode",
+        "fieldType": "field"
+      },
+      {
+        "type": "KEYSYM",
+        "name": "keysyms",
+        "fieldType": "list",
+        "op": {
+          "operation": "*",
+          "fieldref": [
+            "keycode_count",
+            "keysyms_per_keycode"
+          ]
+        }
+      }
+    ]
   },
   "GetKeyboardMapping": {
-    "field": {
-      "first_keycode": "KEYCODE",
-      "count": "CARD8"
-    },
-    "reply": {
-      "field": {
-        "keysyms_per_keycode": "BYTE"
+    "opcode": "101",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
       },
-      "list": {
-        "keysyms": "KEYSYM"
+      {
+        "type": "KEYCODE",
+        "name": "first_keycode",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "count",
+        "fieldType": "field"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "keysyms_per_keycode",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "24",
+          "fieldType": "pad"
+        },
+        {
+          "type": "KEYSYM",
+          "name": "keysyms",
+          "fieldType": "list",
+          "fieldref": "length"
+        }
+      ]
     }
   },
   "ChangeKeyboardControl": {
-    "valueparam": {
-      "value-mask-type": "CARD32",
-      "value-mask-name": "value_mask",
-      "value-list-name": "value_list"
-    }
+    "opcode": "102",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "value-mask-type": "CARD32",
+        "value-mask-name": "value_mask",
+        "value-list-name": "value_list",
+        "fieldType": "valueparam"
+      }
+    ]
   },
   "GetKeyboardControl": {
+    "opcode": "103",
     "reply": {
-      "field": {
-        "global_auto_repeat": "BYTE",
-        "led_mask": "CARD32",
-        "key_click_percent": "CARD8",
-        "bell_percent": "CARD8",
-        "bell_pitch": "CARD16",
-        "bell_duration": "CARD16"
-      },
-      "list": {
-        "auto_repeats": "CARD8"
-      }
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "global_auto_repeat",
+          "enum": "AutoRepeatMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "led_mask",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "key_click_percent",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "bell_percent",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "bell_pitch",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "bell_duration",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD8",
+          "name": "auto_repeats",
+          "fieldType": "list",
+          "value": "32"
+        }
+      ]
     }
   },
   "Bell": {
-    "field": {
-      "percent": "INT8"
-    }
+    "opcode": "104",
+    "field": [
+      {
+        "type": "INT8",
+        "name": "percent",
+        "fieldType": "field"
+      }
+    ]
   },
   "ChangePointerControl": {
-    "field": {
-      "acceleration_numerator": "INT16",
-      "acceleration_denominator": "INT16",
-      "threshold": "INT16",
-      "do_acceleration": "BOOL",
-      "do_threshold": "BOOL"
-    }
+    "opcode": "105",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "INT16",
+        "name": "acceleration_numerator",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "acceleration_denominator",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "threshold",
+        "fieldType": "field"
+      },
+      {
+        "type": "BOOL",
+        "name": "do_acceleration",
+        "fieldType": "field"
+      },
+      {
+        "type": "BOOL",
+        "name": "do_threshold",
+        "fieldType": "field"
+      }
+    ]
   },
   "GetPointerControl": {
+    "opcode": "106",
     "reply": {
-      "field": {
-        "acceleration_numerator": "CARD16",
-        "acceleration_denominator": "CARD16",
-        "threshold": "CARD16"
-      }
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "acceleration_numerator",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "acceleration_denominator",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "threshold",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "18",
+          "fieldType": "pad"
+        }
+      ]
     }
   },
   "SetScreenSaver": {
-    "field": {
-      "timeout": "INT16",
-      "interval": "INT16",
-      "prefer_blanking": "CARD8",
-      "allow_exposures": "CARD8"
-    }
+    "opcode": "107",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "INT16",
+        "name": "timeout",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "interval",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "prefer_blanking",
+        "enum": "Blanking",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "allow_exposures",
+        "enum": "Exposures",
+        "fieldType": "field"
+      }
+    ]
   },
   "GetScreenSaver": {
+    "opcode": "108",
     "reply": {
-      "field": {
-        "timeout": "CARD16",
-        "interval": "CARD16",
-        "prefer_blanking": "BYTE",
-        "allow_exposures": "BYTE"
-      }
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "timeout",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "interval",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "prefer_blanking",
+          "enum": "Blanking",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "allow_exposures",
+          "enum": "Exposures",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "18",
+          "fieldType": "pad"
+        }
+      ]
     }
   },
   "ChangeHosts": {
-    "field": {
-      "mode": "CARD8",
-      "family": "CARD8",
-      "address_len": "CARD16"
-    },
-    "list": {
-      "address": "char"
-    }
+    "opcode": "109",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "mode",
+        "enum": "HostMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "family",
+        "enum": "Family",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "CARD16",
+        "name": "address_len",
+        "fieldType": "field"
+      },
+      {
+        "type": "char",
+        "name": "address",
+        "fieldType": "list",
+        "fieldref": "address_len"
+      }
+    ]
   },
   "ListHosts": {
+    "opcode": "110",
     "reply": {
-      "field": {
-        "mode": "BYTE",
-        "hosts_len": "CARD16"
-      },
-      "list": {
-        "hosts": "HOST"
-      }
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "mode",
+          "enum": "AccessControl",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "hosts_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "22",
+          "fieldType": "pad"
+        },
+        {
+          "type": "HOST",
+          "name": "hosts",
+          "fieldType": "list",
+          "fieldref": "hosts_len"
+        }
+      ]
     }
   },
   "SetAccessControl": {
-    "field": {
-      "mode": "CARD8"
-    }
+    "opcode": "111",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "mode",
+        "enum": "AccessControl",
+        "fieldType": "field"
+      }
+    ]
   },
   "SetCloseDownMode": {
-    "field": {
-      "mode": "CARD8"
-    }
+    "opcode": "112",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "mode",
+        "enum": "CloseDown",
+        "fieldType": "field"
+      }
+    ]
   },
   "KillClient": {
-    "field": {
-      "resource": "CARD32"
-    }
+    "opcode": "113",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "CARD32",
+        "name": "resource",
+        "altenum": "Kill",
+        "fieldType": "field"
+      }
+    ]
   },
   "RotateProperties": {
-    "field": {
-      "window": "WINDOW",
-      "atoms_len": "CARD16",
-      "delta": "INT16"
-    },
-    "list": {
-      "atoms": "ATOM"
-    }
+    "opcode": "114",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "atoms_len",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "delta",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "atoms",
+        "fieldType": "list",
+        "fieldref": "atoms_len"
+      }
+    ]
   },
   "ForceScreenSaver": {
-    "field": {
-      "mode": "CARD8"
-    }
+    "opcode": "115",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "mode",
+        "enum": "ScreenSaver",
+        "fieldType": "field"
+      }
+    ]
   },
   "SetPointerMapping": {
-    "field": {
-      "map_len": "CARD8"
-    },
-    "list": {
-      "map": "CARD8"
-    },
-    "reply": {
-      "field": {
-        "status": "BYTE"
+    "opcode": "116",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "map_len",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "map",
+        "fieldType": "list",
+        "fieldref": "map_len"
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "status",
+          "enum": "MappingStatus",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "GetPointerMapping": {
+    "opcode": "117",
     "reply": {
-      "field": {
-        "map_len": "CARD8"
-      },
-      "list": {
-        "map": "CARD8"
-      }
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "map_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "24",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD8",
+          "name": "map",
+          "fieldType": "list",
+          "fieldref": "map_len"
+        }
+      ]
     }
   },
   "SetModifierMapping": {
-    "field": {
-      "keycodes_per_modifier": "CARD8"
-    },
-    "list": {
-      "keycodes": "KEYCODE"
-    },
-    "reply": {
-      "field": {
-        "status": "BYTE"
+    "opcode": "118",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "keycodes_per_modifier",
+        "fieldType": "field"
+      },
+      {
+        "type": "KEYCODE",
+        "name": "keycodes",
+        "fieldType": "list",
+        "op": {
+          "operation": "*",
+          "fieldref": "keycodes_per_modifier",
+          "value": "8"
+        }
       }
+    ],
+    "reply": {
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "status",
+          "enum": "MappingStatus",
+          "fieldType": "field"
+        }
+      ]
     }
   },
   "GetModifierMapping": {
+    "opcode": "119",
     "reply": {
-      "field": {
-        "keycodes_per_modifier": "CARD8"
-      },
-      "list": {
-        "keycodes": "KEYCODE"
-      }
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "keycodes_per_modifier",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "24",
+          "fieldType": "pad"
+        },
+        {
+          "type": "KEYCODE",
+          "name": "keycodes",
+          "fieldType": "list",
+          "op": {
+            "operation": "*",
+            "fieldref": "keycodes_per_modifier",
+            "value": "8"
+          }
+        }
+      ]
     }
   },
-  "NoOperation": {}
+  "NoOperation": {
+    "opcode": "127"
+  }
 }
