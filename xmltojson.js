@@ -17,7 +17,7 @@ function parse(cb) {
     attrs = attrsToHash(attrs)
     state.push(elem)
     cur = namedFields.indexOf(elem) != -1 ? doPrimaryField(elem, attrs, cur, ret)
-    : acceptFields.indexOf(parent) != -1    ? doFieldType(elem, attrs, cur, ret)
+    : acceptFields.indexOf(parent)  != -1 ? doFieldType(elem, attrs, cur, ret)
     : doSubField(elem, attrs, cur, ret)
     curList.push(cur)
   })
