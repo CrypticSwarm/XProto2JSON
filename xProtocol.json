@@ -1,0 +1,8217 @@
+{
+  "header": "xproto",
+  "struct": {
+    "CHAR2B": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "byte1",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "byte2",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "POINT": {
+      "field": [
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "RECTANGLE": {
+      "field": [
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "ARC": {
+      "field": [
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "angle1",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "angle2",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "FORMAT": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "depth",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "bits_per_pixel",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "scanline_pad",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "5",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "VISUALTYPE": {
+      "field": [
+        {
+          "type": "VISUALID",
+          "name": "visual_id",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "class",
+          "enum": "VisualClass",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "bits_per_rgb_value",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "colormap_entries",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "red_mask",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "green_mask",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "blue_mask",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "4",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "DEPTH": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "depth",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "visuals_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "4",
+          "fieldType": "pad"
+        },
+        {
+          "type": "VISUALTYPE",
+          "name": "visuals",
+          "fieldType": "list",
+          "fieldref": "visuals_len"
+        }
+      ]
+    },
+    "SCREEN": {
+      "field": [
+        {
+          "type": "WINDOW",
+          "name": "root",
+          "fieldType": "field"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "default_colormap",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "white_pixel",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "black_pixel",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "current_input_masks",
+          "mask": "EventMask",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width_in_pixels",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height_in_pixels",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width_in_millimeters",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height_in_millimeters",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "min_installed_maps",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "max_installed_maps",
+          "fieldType": "field"
+        },
+        {
+          "type": "VISUALID",
+          "name": "root_visual",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "backing_stores",
+          "enum": "BackingStore",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "save_unders",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "root_depth",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "allowed_depths_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "DEPTH",
+          "name": "allowed_depths",
+          "fieldType": "list",
+          "fieldref": "allowed_depths_len"
+        }
+      ]
+    },
+    "SetupRequest": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "byte_order",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "protocol_major_version",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "protocol_minor_version",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "authorization_protocol_name_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "authorization_protocol_data_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "char",
+          "name": "authorization_protocol_name",
+          "fieldType": "list",
+          "fieldref": "authorization_protocol_name_len"
+        },
+        {
+          "type": "char",
+          "name": "authorization_protocol_data",
+          "fieldType": "list",
+          "fieldref": "authorization_protocol_data_len"
+        }
+      ]
+    },
+    "SetupFailed": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "status",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "reason_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "protocol_major_version",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "protocol_minor_version",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "length",
+          "fieldType": "field"
+        },
+        {
+          "type": "char",
+          "name": "reason",
+          "fieldType": "list",
+          "fieldref": "reason_len"
+        }
+      ]
+    },
+    "SetupAuthenticate": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "status",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "5",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "length",
+          "fieldType": "field"
+        },
+        {
+          "type": "char",
+          "name": "reason",
+          "fieldType": "list",
+          "op": {
+            "operation": "*",
+            "fieldref": "length",
+            "value": "4"
+          }
+        }
+      ]
+    },
+    "Setup": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "status",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "protocol_major_version",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "protocol_minor_version",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "length",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "release_number",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "resource_id_base",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "resource_id_mask",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "motion_buffer_size",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "vendor_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "maximum_request_length",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "roots_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "pixmap_formats_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "image_byte_order",
+          "enum": "ImageOrder",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "bitmap_format_bit_order",
+          "enum": "ImageOrder",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "bitmap_format_scanline_unit",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "bitmap_format_scanline_pad",
+          "fieldType": "field"
+        },
+        {
+          "type": "KEYCODE",
+          "name": "min_keycode",
+          "fieldType": "field"
+        },
+        {
+          "type": "KEYCODE",
+          "name": "max_keycode",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "4",
+          "fieldType": "pad"
+        },
+        {
+          "type": "char",
+          "name": "vendor",
+          "fieldType": "list",
+          "fieldref": "vendor_len"
+        },
+        {
+          "type": "FORMAT",
+          "name": "pixmap_formats",
+          "fieldType": "list",
+          "fieldref": "pixmap_formats_len"
+        },
+        {
+          "type": "SCREEN",
+          "name": "roots",
+          "fieldType": "list",
+          "fieldref": "roots_len"
+        }
+      ]
+    },
+    "TIMECOORD": {
+      "field": [
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "FONTPROP": {
+      "field": [
+        {
+          "type": "ATOM",
+          "name": "name",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "value",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "CHARINFO": {
+      "field": [
+        {
+          "type": "INT16",
+          "name": "left_side_bearing",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "right_side_bearing",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "character_width",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "ascent",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "descent",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "attributes",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "STR": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "name_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "char",
+          "name": "name",
+          "fieldType": "list",
+          "fieldref": "name_len"
+        }
+      ]
+    },
+    "SEGMENT": {
+      "field": [
+        {
+          "type": "INT16",
+          "name": "x1",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y1",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x2",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y2",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "COLORITEM": {
+      "field": [
+        {
+          "type": "CARD32",
+          "name": "pixel",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "blue",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "flags",
+          "mask": "ColorFlag",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "RGB": {
+      "field": [
+        {
+          "type": "CARD16",
+          "name": "red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "blue",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "HOST": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "family",
+          "enum": "Family",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "address_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "address",
+          "fieldType": "list",
+          "fieldref": "address_len"
+        }
+      ]
+    }
+  },
+  "xidtype": {
+    "WINDOW": {},
+    "PIXMAP": {},
+    "CURSOR": {},
+    "FONT": {},
+    "GCONTEXT": {},
+    "COLORMAP": {},
+    "ATOM": {}
+  },
+  "xidunion": {
+    "DRAWABLE": {
+      "type": [
+        "WINDOW",
+        "PIXMAP"
+      ]
+    },
+    "FONTABLE": {
+      "type": [
+        "FONT",
+        "GCONTEXT"
+      ]
+    }
+  },
+  "typedef": {
+    "VISUALID": {
+      "oldname": "CARD32",
+      "newname": "VISUALID"
+    },
+    "TIMESTAMP": {
+      "oldname": "CARD32",
+      "newname": "TIMESTAMP"
+    },
+    "KEYSYM": {
+      "oldname": "CARD32",
+      "newname": "KEYSYM"
+    },
+    "KEYCODE": {
+      "oldname": "CARD8",
+      "newname": "KEYCODE"
+    },
+    "BUTTON": {
+      "oldname": "CARD8",
+      "newname": "BUTTON"
+    }
+  },
+  "enum": {
+    "VisualClass": {
+      "field": [
+        {
+          "name": "StaticGray",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "GrayScale",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "StaticColor",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "PseudoColor",
+          "fieldType": "item",
+          "value": "3"
+        },
+        {
+          "name": "TrueColor",
+          "fieldType": "item",
+          "value": "4"
+        },
+        {
+          "name": "DirectColor",
+          "fieldType": "item",
+          "value": "5"
+        }
+      ]
+    },
+    "EventMask": {
+      "field": [
+        {
+          "name": "NoEvent",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "KeyPress",
+          "fieldType": "item",
+          "bit": "0"
+        },
+        {
+          "name": "KeyRelease",
+          "fieldType": "item",
+          "bit": "1"
+        },
+        {
+          "name": "ButtonPress",
+          "fieldType": "item",
+          "bit": "2"
+        },
+        {
+          "name": "ButtonRelease",
+          "fieldType": "item",
+          "bit": "3"
+        },
+        {
+          "name": "EnterWindow",
+          "fieldType": "item",
+          "bit": "4"
+        },
+        {
+          "name": "LeaveWindow",
+          "fieldType": "item",
+          "bit": "5"
+        },
+        {
+          "name": "PointerMotion",
+          "fieldType": "item",
+          "bit": "6"
+        },
+        {
+          "name": "PointerMotionHint",
+          "fieldType": "item",
+          "bit": "7"
+        },
+        {
+          "name": "Button1Motion",
+          "fieldType": "item",
+          "bit": "8"
+        },
+        {
+          "name": "Button2Motion",
+          "fieldType": "item",
+          "bit": "9"
+        },
+        {
+          "name": "Button3Motion",
+          "fieldType": "item",
+          "bit": "10"
+        },
+        {
+          "name": "Button4Motion",
+          "fieldType": "item",
+          "bit": "11"
+        },
+        {
+          "name": "Button5Motion",
+          "fieldType": "item",
+          "bit": "12"
+        },
+        {
+          "name": "ButtonMotion",
+          "fieldType": "item",
+          "bit": "13"
+        },
+        {
+          "name": "KeymapState",
+          "fieldType": "item",
+          "bit": "14"
+        },
+        {
+          "name": "Exposure",
+          "fieldType": "item",
+          "bit": "15"
+        },
+        {
+          "name": "VisibilityChange",
+          "fieldType": "item",
+          "bit": "16"
+        },
+        {
+          "name": "StructureNotify",
+          "fieldType": "item",
+          "bit": "17"
+        },
+        {
+          "name": "ResizeRedirect",
+          "fieldType": "item",
+          "bit": "18"
+        },
+        {
+          "name": "SubstructureNotify",
+          "fieldType": "item",
+          "bit": "19"
+        },
+        {
+          "name": "SubstructureRedirect",
+          "fieldType": "item",
+          "bit": "20"
+        },
+        {
+          "name": "FocusChange",
+          "fieldType": "item",
+          "bit": "21"
+        },
+        {
+          "name": "PropertyChange",
+          "fieldType": "item",
+          "bit": "22"
+        },
+        {
+          "name": "ColorMapChange",
+          "fieldType": "item",
+          "bit": "23"
+        },
+        {
+          "name": "OwnerGrabButton",
+          "fieldType": "item",
+          "bit": "24"
+        }
+      ]
+    },
+    "BackingStore": {
+      "field": [
+        {
+          "name": "NotUseful",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "WhenMapped",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Always",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "ImageOrder": {
+      "field": [
+        {
+          "name": "LSBFirst",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "MSBFirst",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "ModMask": {
+      "field": [
+        {
+          "name": "Shift",
+          "fieldType": "item",
+          "bit": "0"
+        },
+        {
+          "name": "Lock",
+          "fieldType": "item",
+          "bit": "1"
+        },
+        {
+          "name": "Control",
+          "fieldType": "item",
+          "bit": "2"
+        },
+        {
+          "name": "1",
+          "fieldType": "item",
+          "bit": "3"
+        },
+        {
+          "name": "2",
+          "fieldType": "item",
+          "bit": "4"
+        },
+        {
+          "name": "3",
+          "fieldType": "item",
+          "bit": "5"
+        },
+        {
+          "name": "4",
+          "fieldType": "item",
+          "bit": "6"
+        },
+        {
+          "name": "5",
+          "fieldType": "item",
+          "bit": "7"
+        },
+        {
+          "name": "Any",
+          "fieldType": "item",
+          "bit": "15"
+        }
+      ]
+    },
+    "KeyButMask": {
+      "field": [
+        {
+          "name": "Shift",
+          "fieldType": "item",
+          "bit": "0"
+        },
+        {
+          "name": "Lock",
+          "fieldType": "item",
+          "bit": "1"
+        },
+        {
+          "name": "Control",
+          "fieldType": "item",
+          "bit": "2"
+        },
+        {
+          "name": "Mod1",
+          "fieldType": "item",
+          "bit": "3"
+        },
+        {
+          "name": "Mod2",
+          "fieldType": "item",
+          "bit": "4"
+        },
+        {
+          "name": "Mod3",
+          "fieldType": "item",
+          "bit": "5"
+        },
+        {
+          "name": "Mod4",
+          "fieldType": "item",
+          "bit": "6"
+        },
+        {
+          "name": "Mod5",
+          "fieldType": "item",
+          "bit": "7"
+        },
+        {
+          "name": "Button1",
+          "fieldType": "item",
+          "bit": "8"
+        },
+        {
+          "name": "Button2",
+          "fieldType": "item",
+          "bit": "9"
+        },
+        {
+          "name": "Button3",
+          "fieldType": "item",
+          "bit": "10"
+        },
+        {
+          "name": "Button4",
+          "fieldType": "item",
+          "bit": "11"
+        },
+        {
+          "name": "Button5",
+          "fieldType": "item",
+          "bit": "12"
+        }
+      ]
+    },
+    "Window": {
+      "field": [
+        {
+          "name": "None",
+          "fieldType": "item",
+          "value": "0"
+        }
+      ]
+    },
+    "ButtonMask": {
+      "field": [
+        {
+          "name": "1",
+          "fieldType": "item",
+          "bit": "8"
+        },
+        {
+          "name": "2",
+          "fieldType": "item",
+          "bit": "9"
+        },
+        {
+          "name": "3",
+          "fieldType": "item",
+          "bit": "10"
+        },
+        {
+          "name": "4",
+          "fieldType": "item",
+          "bit": "11"
+        },
+        {
+          "name": "5",
+          "fieldType": "item",
+          "bit": "12"
+        },
+        {
+          "name": "Any",
+          "fieldType": "item",
+          "bit": "15"
+        }
+      ]
+    },
+    "Motion": {
+      "field": [
+        {
+          "name": "Normal",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Hint",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "NotifyDetail": {
+      "field": [
+        {
+          "name": "Ancestor",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Virtual",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Inferior",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "Nonlinear",
+          "fieldType": "item",
+          "value": "3"
+        },
+        {
+          "name": "NonlinearVirtual",
+          "fieldType": "item",
+          "value": "4"
+        },
+        {
+          "name": "Pointer",
+          "fieldType": "item",
+          "value": "5"
+        },
+        {
+          "name": "PointerRoot",
+          "fieldType": "item",
+          "value": "6"
+        },
+        {
+          "name": "None",
+          "fieldType": "item",
+          "value": "7"
+        }
+      ]
+    },
+    "NotifyMode": {
+      "field": [
+        {
+          "name": "Normal",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Grab",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Ungrab",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "WhileGrabbed",
+          "fieldType": "item",
+          "value": "3"
+        }
+      ]
+    },
+    "Visibility": {
+      "field": [
+        {
+          "name": "Unobscured",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "PartiallyObscured",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "FullyObscured",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "Place": {
+      "field": [
+        {
+          "name": "OnTop",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "OnBottom",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "Property": {
+      "field": [
+        {
+          "name": "NewValue",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Delete",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "Time": {
+      "field": [
+        {
+          "name": "CurrentTime",
+          "fieldType": "item",
+          "value": "0"
+        }
+      ]
+    },
+    "Atom": {
+      "field": [
+        {
+          "name": "None",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Any",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "PRIMARY",
+          "fieldType": "item"
+        },
+        {
+          "name": "SECONDARY",
+          "fieldType": "item"
+        },
+        {
+          "name": "ARC",
+          "fieldType": "item"
+        },
+        {
+          "name": "ATOM",
+          "fieldType": "item"
+        },
+        {
+          "name": "BITMAP",
+          "fieldType": "item"
+        },
+        {
+          "name": "CARDINAL",
+          "fieldType": "item"
+        },
+        {
+          "name": "COLORMAP",
+          "fieldType": "item"
+        },
+        {
+          "name": "CURSOR",
+          "fieldType": "item"
+        },
+        {
+          "name": "CUT_BUFFER0",
+          "fieldType": "item"
+        },
+        {
+          "name": "CUT_BUFFER1",
+          "fieldType": "item"
+        },
+        {
+          "name": "CUT_BUFFER2",
+          "fieldType": "item"
+        },
+        {
+          "name": "CUT_BUFFER3",
+          "fieldType": "item"
+        },
+        {
+          "name": "CUT_BUFFER4",
+          "fieldType": "item"
+        },
+        {
+          "name": "CUT_BUFFER5",
+          "fieldType": "item"
+        },
+        {
+          "name": "CUT_BUFFER6",
+          "fieldType": "item"
+        },
+        {
+          "name": "CUT_BUFFER7",
+          "fieldType": "item"
+        },
+        {
+          "name": "DRAWABLE",
+          "fieldType": "item"
+        },
+        {
+          "name": "FONT",
+          "fieldType": "item"
+        },
+        {
+          "name": "INTEGER",
+          "fieldType": "item"
+        },
+        {
+          "name": "PIXMAP",
+          "fieldType": "item"
+        },
+        {
+          "name": "POINT",
+          "fieldType": "item"
+        },
+        {
+          "name": "RECTANGLE",
+          "fieldType": "item"
+        },
+        {
+          "name": "RESOURCE_MANAGER",
+          "fieldType": "item"
+        },
+        {
+          "name": "RGB_COLOR_MAP",
+          "fieldType": "item"
+        },
+        {
+          "name": "RGB_BEST_MAP",
+          "fieldType": "item"
+        },
+        {
+          "name": "RGB_BLUE_MAP",
+          "fieldType": "item"
+        },
+        {
+          "name": "RGB_DEFAULT_MAP",
+          "fieldType": "item"
+        },
+        {
+          "name": "RGB_GRAY_MAP",
+          "fieldType": "item"
+        },
+        {
+          "name": "RGB_GREEN_MAP",
+          "fieldType": "item"
+        },
+        {
+          "name": "RGB_RED_MAP",
+          "fieldType": "item"
+        },
+        {
+          "name": "STRING",
+          "fieldType": "item"
+        },
+        {
+          "name": "VISUALID",
+          "fieldType": "item"
+        },
+        {
+          "name": "WINDOW",
+          "fieldType": "item"
+        },
+        {
+          "name": "WM_COMMAND",
+          "fieldType": "item"
+        },
+        {
+          "name": "WM_HINTS",
+          "fieldType": "item"
+        },
+        {
+          "name": "WM_CLIENT_MACHINE",
+          "fieldType": "item"
+        },
+        {
+          "name": "WM_ICON_NAME",
+          "fieldType": "item"
+        },
+        {
+          "name": "WM_ICON_SIZE",
+          "fieldType": "item"
+        },
+        {
+          "name": "WM_NAME",
+          "fieldType": "item"
+        },
+        {
+          "name": "WM_NORMAL_HINTS",
+          "fieldType": "item"
+        },
+        {
+          "name": "WM_SIZE_HINTS",
+          "fieldType": "item"
+        },
+        {
+          "name": "WM_ZOOM_HINTS",
+          "fieldType": "item"
+        },
+        {
+          "name": "MIN_SPACE",
+          "fieldType": "item"
+        },
+        {
+          "name": "NORM_SPACE",
+          "fieldType": "item"
+        },
+        {
+          "name": "MAX_SPACE",
+          "fieldType": "item"
+        },
+        {
+          "name": "END_SPACE",
+          "fieldType": "item"
+        },
+        {
+          "name": "SUPERSCRIPT_X",
+          "fieldType": "item"
+        },
+        {
+          "name": "SUPERSCRIPT_Y",
+          "fieldType": "item"
+        },
+        {
+          "name": "SUBSCRIPT_X",
+          "fieldType": "item"
+        },
+        {
+          "name": "SUBSCRIPT_Y",
+          "fieldType": "item"
+        },
+        {
+          "name": "UNDERLINE_POSITION",
+          "fieldType": "item"
+        },
+        {
+          "name": "UNDERLINE_THICKNESS",
+          "fieldType": "item"
+        },
+        {
+          "name": "STRIKEOUT_ASCENT",
+          "fieldType": "item"
+        },
+        {
+          "name": "STRIKEOUT_DESCENT",
+          "fieldType": "item"
+        },
+        {
+          "name": "ITALIC_ANGLE",
+          "fieldType": "item"
+        },
+        {
+          "name": "X_HEIGHT",
+          "fieldType": "item"
+        },
+        {
+          "name": "QUAD_WIDTH",
+          "fieldType": "item"
+        },
+        {
+          "name": "WEIGHT",
+          "fieldType": "item"
+        },
+        {
+          "name": "POINT_SIZE",
+          "fieldType": "item"
+        },
+        {
+          "name": "RESOLUTION",
+          "fieldType": "item"
+        },
+        {
+          "name": "COPYRIGHT",
+          "fieldType": "item"
+        },
+        {
+          "name": "NOTICE",
+          "fieldType": "item"
+        },
+        {
+          "name": "FONT_NAME",
+          "fieldType": "item"
+        },
+        {
+          "name": "FAMILY_NAME",
+          "fieldType": "item"
+        },
+        {
+          "name": "FULL_NAME",
+          "fieldType": "item"
+        },
+        {
+          "name": "CAP_HEIGHT",
+          "fieldType": "item"
+        },
+        {
+          "name": "WM_CLASS",
+          "fieldType": "item"
+        },
+        {
+          "name": "WM_TRANSIENT_FOR",
+          "fieldType": "item"
+        }
+      ]
+    },
+    "ColormapState": {
+      "field": [
+        {
+          "name": "Uninstalled",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Installed",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "Colormap": {
+      "field": [
+        {
+          "name": "None",
+          "fieldType": "item",
+          "value": "0"
+        }
+      ]
+    },
+    "Mapping": {
+      "field": [
+        {
+          "name": "Modifier",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Keyboard",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Pointer",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "WindowClass": {
+      "field": [
+        {
+          "name": "CopyFromParent",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "InputOutput",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "InputOnly",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "CW": {
+      "field": [
+        {
+          "name": "BackPixmap",
+          "fieldType": "item",
+          "bit": "0"
+        },
+        {
+          "name": "BackPixel",
+          "fieldType": "item",
+          "bit": "1"
+        },
+        {
+          "name": "BorderPixmap",
+          "fieldType": "item",
+          "bit": "2"
+        },
+        {
+          "name": "BorderPixel",
+          "fieldType": "item",
+          "bit": "3"
+        },
+        {
+          "name": "BitGravity",
+          "fieldType": "item",
+          "bit": "4"
+        },
+        {
+          "name": "WinGravity",
+          "fieldType": "item",
+          "bit": "5"
+        },
+        {
+          "name": "BackingStore",
+          "fieldType": "item",
+          "bit": "6"
+        },
+        {
+          "name": "BackingPlanes",
+          "fieldType": "item",
+          "bit": "7"
+        },
+        {
+          "name": "BackingPixel",
+          "fieldType": "item",
+          "bit": "8"
+        },
+        {
+          "name": "OverrideRedirect",
+          "fieldType": "item",
+          "bit": "9"
+        },
+        {
+          "name": "SaveUnder",
+          "fieldType": "item",
+          "bit": "10"
+        },
+        {
+          "name": "EventMask",
+          "fieldType": "item",
+          "bit": "11"
+        },
+        {
+          "name": "DontPropagate",
+          "fieldType": "item",
+          "bit": "12"
+        },
+        {
+          "name": "Colormap",
+          "fieldType": "item",
+          "bit": "13"
+        },
+        {
+          "name": "Cursor",
+          "fieldType": "item",
+          "bit": "14"
+        }
+      ]
+    },
+    "BackPixmap": {
+      "field": [
+        {
+          "name": "None",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "ParentRelative",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "Gravity": {
+      "field": [
+        {
+          "name": "BitForget",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "WinUnmap",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "NorthWest",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "North",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "NorthEast",
+          "fieldType": "item",
+          "value": "3"
+        },
+        {
+          "name": "West",
+          "fieldType": "item",
+          "value": "4"
+        },
+        {
+          "name": "Center",
+          "fieldType": "item",
+          "value": "5"
+        },
+        {
+          "name": "East",
+          "fieldType": "item",
+          "value": "6"
+        },
+        {
+          "name": "SouthWest",
+          "fieldType": "item",
+          "value": "7"
+        },
+        {
+          "name": "South",
+          "fieldType": "item",
+          "value": "8"
+        },
+        {
+          "name": "SouthEast",
+          "fieldType": "item",
+          "value": "9"
+        },
+        {
+          "name": "Static",
+          "fieldType": "item",
+          "value": "10"
+        }
+      ]
+    },
+    "MapState": {
+      "field": [
+        {
+          "name": "Unmapped",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Unviewable",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Viewable",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "SetMode": {
+      "field": [
+        {
+          "name": "Insert",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Delete",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "ConfigWindow": {
+      "field": [
+        {
+          "name": "X",
+          "fieldType": "item",
+          "bit": "0"
+        },
+        {
+          "name": "Y",
+          "fieldType": "item",
+          "bit": "1"
+        },
+        {
+          "name": "Width",
+          "fieldType": "item",
+          "bit": "2"
+        },
+        {
+          "name": "Height",
+          "fieldType": "item",
+          "bit": "3"
+        },
+        {
+          "name": "BorderWidth",
+          "fieldType": "item",
+          "bit": "4"
+        },
+        {
+          "name": "Sibling",
+          "fieldType": "item",
+          "bit": "5"
+        },
+        {
+          "name": "StackMode",
+          "fieldType": "item",
+          "bit": "6"
+        }
+      ]
+    },
+    "StackMode": {
+      "field": [
+        {
+          "name": "Above",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Below",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "TopIf",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "BottomIf",
+          "fieldType": "item",
+          "value": "3"
+        },
+        {
+          "name": "Opposite",
+          "fieldType": "item",
+          "value": "4"
+        }
+      ]
+    },
+    "Circulate": {
+      "field": [
+        {
+          "name": "RaiseLowest",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "LowerHighest",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "PropMode": {
+      "field": [
+        {
+          "name": "Replace",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Prepend",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Append",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "GetPropertyType": {
+      "field": [
+        {
+          "name": "Any",
+          "fieldType": "item",
+          "value": "0"
+        }
+      ]
+    },
+    "SendEventDest": {
+      "field": [
+        {
+          "name": "PointerWindow",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "ItemFocus",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "GrabMode": {
+      "field": [
+        {
+          "name": "Sync",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Async",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "GrabStatus": {
+      "field": [
+        {
+          "name": "Success",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "AlreadyGrabbed",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "InvalidTime",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "NotViewable",
+          "fieldType": "item",
+          "value": "3"
+        },
+        {
+          "name": "Frozen",
+          "fieldType": "item",
+          "value": "4"
+        }
+      ]
+    },
+    "Cursor": {
+      "field": [
+        {
+          "name": "None",
+          "fieldType": "item",
+          "value": "0"
+        }
+      ]
+    },
+    "ButtonIndex": {
+      "field": [
+        {
+          "name": "Any",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "1",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "2",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "3",
+          "fieldType": "item",
+          "value": "3"
+        },
+        {
+          "name": "4",
+          "fieldType": "item",
+          "value": "4"
+        },
+        {
+          "name": "5",
+          "fieldType": "item",
+          "value": "5"
+        }
+      ]
+    },
+    "Grab": {
+      "field": [
+        {
+          "name": "Any",
+          "fieldType": "item",
+          "value": "0"
+        }
+      ]
+    },
+    "Allow": {
+      "field": [
+        {
+          "name": "AsyncPointer",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "SyncPointer",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "ReplayPointer",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "AsyncKeyboard",
+          "fieldType": "item",
+          "value": "3"
+        },
+        {
+          "name": "SyncKeyboard",
+          "fieldType": "item",
+          "value": "4"
+        },
+        {
+          "name": "ReplayKeyboard",
+          "fieldType": "item",
+          "value": "5"
+        },
+        {
+          "name": "AsyncBoth",
+          "fieldType": "item",
+          "value": "6"
+        },
+        {
+          "name": "SyncBoth",
+          "fieldType": "item",
+          "value": "7"
+        }
+      ]
+    },
+    "InputFocus": {
+      "field": [
+        {
+          "name": "None",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "PointerRoot",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Parent",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "FollowKeyboard",
+          "fieldType": "item",
+          "value": "3"
+        }
+      ]
+    },
+    "FontDraw": {
+      "field": [
+        {
+          "name": "LeftToRight",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "RightToLeft",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "GC": {
+      "field": [
+        {
+          "name": "Function",
+          "fieldType": "item",
+          "bit": "0"
+        },
+        {
+          "name": "PlaneMask",
+          "fieldType": "item",
+          "bit": "1"
+        },
+        {
+          "name": "Foreground",
+          "fieldType": "item",
+          "bit": "2"
+        },
+        {
+          "name": "Background",
+          "fieldType": "item",
+          "bit": "3"
+        },
+        {
+          "name": "LineWidth",
+          "fieldType": "item",
+          "bit": "4"
+        },
+        {
+          "name": "LineStyle",
+          "fieldType": "item",
+          "bit": "5"
+        },
+        {
+          "name": "CapStyle",
+          "fieldType": "item",
+          "bit": "6"
+        },
+        {
+          "name": "JoinStyle",
+          "fieldType": "item",
+          "bit": "7"
+        },
+        {
+          "name": "FillStyle",
+          "fieldType": "item",
+          "bit": "8"
+        },
+        {
+          "name": "FillRule",
+          "fieldType": "item",
+          "bit": "9"
+        },
+        {
+          "name": "Tile",
+          "fieldType": "item",
+          "bit": "10"
+        },
+        {
+          "name": "Stipple",
+          "fieldType": "item",
+          "bit": "11"
+        },
+        {
+          "name": "TileStippleOriginX",
+          "fieldType": "item",
+          "bit": "12"
+        },
+        {
+          "name": "TileStippleOriginY",
+          "fieldType": "item",
+          "bit": "13"
+        },
+        {
+          "name": "Font",
+          "fieldType": "item",
+          "bit": "14"
+        },
+        {
+          "name": "SubwindowMode",
+          "fieldType": "item",
+          "bit": "15"
+        },
+        {
+          "name": "GraphicsExposures",
+          "fieldType": "item",
+          "bit": "16"
+        },
+        {
+          "name": "ClipOriginX",
+          "fieldType": "item",
+          "bit": "17"
+        },
+        {
+          "name": "ClipOriginY",
+          "fieldType": "item",
+          "bit": "18"
+        },
+        {
+          "name": "ClipMask",
+          "fieldType": "item",
+          "bit": "19"
+        },
+        {
+          "name": "DashOffset",
+          "fieldType": "item",
+          "bit": "20"
+        },
+        {
+          "name": "DashList",
+          "fieldType": "item",
+          "bit": "21"
+        },
+        {
+          "name": "ArcMode",
+          "fieldType": "item",
+          "bit": "22"
+        }
+      ]
+    },
+    "GX": {
+      "field": [
+        {
+          "name": "clear",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "and",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "andReverse",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "copy",
+          "fieldType": "item",
+          "value": "3"
+        },
+        {
+          "name": "andInverted",
+          "fieldType": "item",
+          "value": "4"
+        },
+        {
+          "name": "noop",
+          "fieldType": "item",
+          "value": "5"
+        },
+        {
+          "name": "xor",
+          "fieldType": "item",
+          "value": "6"
+        },
+        {
+          "name": "or",
+          "fieldType": "item",
+          "value": "7"
+        },
+        {
+          "name": "nor",
+          "fieldType": "item",
+          "value": "8"
+        },
+        {
+          "name": "equiv",
+          "fieldType": "item",
+          "value": "9"
+        },
+        {
+          "name": "invert",
+          "fieldType": "item",
+          "value": "10"
+        },
+        {
+          "name": "orReverse",
+          "fieldType": "item",
+          "value": "11"
+        },
+        {
+          "name": "copyInverted",
+          "fieldType": "item",
+          "value": "12"
+        },
+        {
+          "name": "orInverted",
+          "fieldType": "item",
+          "value": "13"
+        },
+        {
+          "name": "nand",
+          "fieldType": "item",
+          "value": "14"
+        },
+        {
+          "name": "set",
+          "fieldType": "item",
+          "value": "15"
+        }
+      ]
+    },
+    "LineStyle": {
+      "field": [
+        {
+          "name": "Solid",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "OnOffDash",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "DoubleDash",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "CapStyle": {
+      "field": [
+        {
+          "name": "NotLast",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Butt",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Round",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "Projecting",
+          "fieldType": "item",
+          "value": "3"
+        }
+      ]
+    },
+    "JoinStyle": {
+      "field": [
+        {
+          "name": "Miter",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Round",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Bevel",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "FillStyle": {
+      "field": [
+        {
+          "name": "Solid",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Tiled",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Stippled",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "OpaqueStippled",
+          "fieldType": "item",
+          "value": "3"
+        }
+      ]
+    },
+    "FillRule": {
+      "field": [
+        {
+          "name": "EvenOdd",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Winding",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "SubwindowMode": {
+      "field": [
+        {
+          "name": "ClipByChildren",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "IncludeInferiors",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "ArcMode": {
+      "field": [
+        {
+          "name": "Chord",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "PieSlice",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "ClipOrdering": {
+      "field": [
+        {
+          "name": "Unsorted",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "YSorted",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "YXSorted",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "YXBanded",
+          "fieldType": "item",
+          "value": "3"
+        }
+      ]
+    },
+    "CoordMode": {
+      "field": [
+        {
+          "name": "Origin",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Previous",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "PolyShape": {
+      "field": [
+        {
+          "name": "Complex",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Nonconvex",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Convex",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "ImageFormat": {
+      "field": [
+        {
+          "name": "XYBitmap",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "XYPixmap",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "ZPixmap",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "ColormapAlloc": {
+      "field": [
+        {
+          "name": "None",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "All",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "ColorFlag": {
+      "field": [
+        {
+          "name": "Red",
+          "fieldType": "item",
+          "bit": "0"
+        },
+        {
+          "name": "Green",
+          "fieldType": "item",
+          "bit": "1"
+        },
+        {
+          "name": "Blue",
+          "fieldType": "item",
+          "bit": "2"
+        }
+      ]
+    },
+    "Pixmap": {
+      "field": [
+        {
+          "name": "None",
+          "fieldType": "item",
+          "value": "0"
+        }
+      ]
+    },
+    "Font": {
+      "field": [
+        {
+          "name": "None",
+          "fieldType": "item",
+          "value": "0"
+        }
+      ]
+    },
+    "QueryShapeOf": {
+      "field": [
+        {
+          "name": "LargestCursor",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "FastestTile",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "FastestStipple",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "KB": {
+      "field": [
+        {
+          "name": "KeyClickPercent",
+          "fieldType": "item",
+          "bit": "0"
+        },
+        {
+          "name": "BellPercent",
+          "fieldType": "item",
+          "bit": "1"
+        },
+        {
+          "name": "BellPitch",
+          "fieldType": "item",
+          "bit": "2"
+        },
+        {
+          "name": "BellDuration",
+          "fieldType": "item",
+          "bit": "3"
+        },
+        {
+          "name": "Led",
+          "fieldType": "item",
+          "bit": "4"
+        },
+        {
+          "name": "LedMode",
+          "fieldType": "item",
+          "bit": "5"
+        },
+        {
+          "name": "Key",
+          "fieldType": "item",
+          "bit": "6"
+        },
+        {
+          "name": "AutoRepeatMode",
+          "fieldType": "item",
+          "bit": "7"
+        }
+      ]
+    },
+    "LedMode": {
+      "field": [
+        {
+          "name": "Off",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "On",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "AutoRepeatMode": {
+      "field": [
+        {
+          "name": "Off",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "On",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Default",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "Blanking": {
+      "field": [
+        {
+          "name": "NotPreferred",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Preferred",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Default",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "Exposures": {
+      "field": [
+        {
+          "name": "NotAllowed",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Allowed",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Default",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "HostMode": {
+      "field": [
+        {
+          "name": "Insert",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Delete",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "Family": {
+      "field": [
+        {
+          "name": "Internet",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "DECnet",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Chaos",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "ServerInterpreted",
+          "fieldType": "item",
+          "value": "5"
+        },
+        {
+          "name": "Internet6",
+          "fieldType": "item",
+          "value": "6"
+        }
+      ]
+    },
+    "AccessControl": {
+      "field": [
+        {
+          "name": "Disable",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Enable",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "CloseDown": {
+      "field": [
+        {
+          "name": "DestroyAll",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "RetainPermanent",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "RetainTemporary",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "Kill": {
+      "field": [
+        {
+          "name": "AllTemporary",
+          "fieldType": "item",
+          "value": "0"
+        }
+      ]
+    },
+    "ScreenSaver": {
+      "field": [
+        {
+          "name": "Reset",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Active",
+          "fieldType": "item",
+          "value": "1"
+        }
+      ]
+    },
+    "MappingStatus": {
+      "field": [
+        {
+          "name": "Success",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Busy",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Failure",
+          "fieldType": "item",
+          "value": "2"
+        }
+      ]
+    },
+    "MapIndex": {
+      "field": [
+        {
+          "name": "Shift",
+          "fieldType": "item",
+          "value": "0"
+        },
+        {
+          "name": "Lock",
+          "fieldType": "item",
+          "value": "1"
+        },
+        {
+          "name": "Control",
+          "fieldType": "item",
+          "value": "2"
+        },
+        {
+          "name": "1",
+          "fieldType": "item",
+          "value": "3"
+        },
+        {
+          "name": "2",
+          "fieldType": "item",
+          "value": "4"
+        },
+        {
+          "name": "3",
+          "fieldType": "item",
+          "value": "5"
+        },
+        {
+          "name": "4",
+          "fieldType": "item",
+          "value": "6"
+        },
+        {
+          "name": "5",
+          "fieldType": "item",
+          "value": "7"
+        }
+      ]
+    }
+  },
+  "event": {
+    "KeyPress": {
+      "number": "2",
+      "field": [
+        {
+          "type": "KEYCODE",
+          "name": "detail",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "root",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "child",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "root_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "root_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "event_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "event_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "state",
+          "mask": "KeyButMask",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "same_screen",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "ButtonPress": {
+      "number": "4",
+      "field": [
+        {
+          "type": "BUTTON",
+          "name": "detail",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "root",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "child",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "root_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "root_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "event_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "event_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "state",
+          "mask": "KeyButMask",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "same_screen",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "MotionNotify": {
+      "number": "6",
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "detail",
+          "enum": "Motion",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "root",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "child",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "root_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "root_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "event_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "event_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "state",
+          "mask": "KeyButMask",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "same_screen",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "EnterNotify": {
+      "number": "7",
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "detail",
+          "enum": "NotifyDetail",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "root",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "child",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "root_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "root_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "event_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "event_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "state",
+          "mask": "KeyButMask",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "mode",
+          "enum": "NotifyMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "same_screen_focus",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "FocusIn": {
+      "number": "9",
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "detail",
+          "enum": "NotifyDetail",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "mode",
+          "enum": "NotifyMode",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "3",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "KeymapNotify": {
+      "number": "11",
+      "no-sequence-number": "true",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "keys",
+          "fieldType": "list",
+          "value": "31"
+        }
+      ]
+    },
+    "Expose": {
+      "number": "12",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "count",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "GraphicsExposure": {
+      "number": "13",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "minor_opcode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "count",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "major_opcode",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "3",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "NoExposure": {
+      "number": "14",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "minor_opcode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "major_opcode",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "VisibilityNotify": {
+      "number": "15",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "state",
+          "enum": "Visibility",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "3",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "CreateNotify": {
+      "number": "16",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "parent",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "border_width",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "override_redirect",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "DestroyNotify": {
+      "number": "17",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "UnmapNotify": {
+      "number": "18",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "from_configure",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "3",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "MapNotify": {
+      "number": "19",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "override_redirect",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "3",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "MapRequest": {
+      "number": "20",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "parent",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "ReparentNotify": {
+      "number": "21",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "parent",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "override_redirect",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "3",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "ConfigureNotify": {
+      "number": "22",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "above_sibling",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "border_width",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "override_redirect",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "ConfigureRequest": {
+      "number": "23",
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "stack_mode",
+          "enum": "StackMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "parent",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "sibling",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "border_width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "value_mask",
+          "mask": "ConfigWindow",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "GravityNotify": {
+      "number": "24",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "ResizeRequest": {
+      "number": "25",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "CirculateNotify": {
+      "number": "26",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "event",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "4",
+          "fieldType": "pad"
+        },
+        {
+          "type": "BYTE",
+          "name": "place",
+          "enum": "Place",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "3",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "PropertyNotify": {
+      "number": "28",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "atom",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "state",
+          "enum": "Property",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "3",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "SelectionClear": {
+      "number": "29",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "owner",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "selection",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "SelectionRequest": {
+      "number": "30",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "altenum": "Time",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "owner",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "requestor",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "selection",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "target",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "property",
+          "altenum": "Atom",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "SelectionNotify": {
+      "number": "31",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "altenum": "Time",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "requestor",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "selection",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "target",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "property",
+          "altenum": "Atom",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "ColormapNotify": {
+      "number": "32",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "colormap",
+          "altenum": "Colormap",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "new",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "state",
+          "enum": "ColormapState",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "ClientMessage": {
+      "number": "33",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "format",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "type",
+          "fieldType": "field"
+        },
+        {
+          "type": "ClientMessageData",
+          "name": "data",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "MappingNotify": {
+      "number": "34",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "BYTE",
+          "name": "request",
+          "enum": "Mapping",
+          "fieldType": "field"
+        },
+        {
+          "type": "KEYCODE",
+          "name": "first_keycode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "count",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        }
+      ]
+    }
+  },
+  "eventcopy": {
+    "KeyRelease": {
+      "number": "3",
+      "ref": "KeyPress"
+    },
+    "ButtonRelease": {
+      "number": "5",
+      "ref": "ButtonPress"
+    },
+    "LeaveNotify": {
+      "number": "8",
+      "ref": "EnterNotify"
+    },
+    "FocusOut": {
+      "number": "10",
+      "ref": "FocusIn"
+    },
+    "CirculateRequest": {
+      "number": "27",
+      "ref": "CirculateNotify"
+    }
+  },
+  "union": {
+    "ClientMessageData": {
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "data8",
+          "fieldType": "list",
+          "value": "20"
+        },
+        {
+          "type": "CARD16",
+          "name": "data16",
+          "fieldType": "list",
+          "value": "10"
+        },
+        {
+          "type": "CARD32",
+          "name": "data32",
+          "fieldType": "list",
+          "value": "5"
+        }
+      ]
+    }
+  },
+  "error": {
+    "Request": {
+      "number": "1",
+      "field": [
+        {
+          "type": "CARD32",
+          "name": "bad_value",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "minor_opcode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "major_opcode",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "Value": {
+      "number": "2",
+      "field": [
+        {
+          "type": "CARD32",
+          "name": "bad_value",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "minor_opcode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "major_opcode",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        }
+      ]
+    }
+  },
+  "errorcopy": {
+    "Window": {
+      "number": "3",
+      "ref": "Value"
+    },
+    "Pixmap": {
+      "number": "4",
+      "ref": "Value"
+    },
+    "Atom": {
+      "number": "5",
+      "ref": "Value"
+    },
+    "Cursor": {
+      "number": "6",
+      "ref": "Value"
+    },
+    "Font": {
+      "number": "7",
+      "ref": "Value"
+    },
+    "Match": {
+      "number": "8",
+      "ref": "Request"
+    },
+    "Drawable": {
+      "number": "9",
+      "ref": "Value"
+    },
+    "Access": {
+      "number": "10",
+      "ref": "Request"
+    },
+    "Alloc": {
+      "number": "11",
+      "ref": "Request"
+    },
+    "Colormap": {
+      "number": "12",
+      "ref": "Value"
+    },
+    "GContext": {
+      "number": "13",
+      "ref": "Value"
+    },
+    "IDChoice": {
+      "number": "14",
+      "ref": "Value"
+    },
+    "Name": {
+      "number": "15",
+      "ref": "Request"
+    },
+    "Length": {
+      "number": "16",
+      "ref": "Request"
+    },
+    "Implementation": {
+      "number": "17",
+      "ref": "Request"
+    }
+  },
+  "request": {
+    "CreateWindow": {
+      "opcode": "1",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "depth",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "wid",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "parent",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "border_width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "class",
+          "enum": "WindowClass",
+          "fieldType": "field"
+        },
+        {
+          "type": "VISUALID",
+          "name": "visual",
+          "fieldType": "field"
+        },
+        {
+          "value-mask-type": "CARD32",
+          "value-mask-name": "value_mask",
+          "value-list-name": "value_list",
+          "fieldType": "valueparam"
+        }
+      ]
+    },
+    "ChangeWindowAttributes": {
+      "opcode": "2",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "value-mask-type": "CARD32",
+          "value-mask-name": "value_mask",
+          "value-list-name": "value_list",
+          "fieldType": "valueparam"
+        }
+      ]
+    },
+    "GetWindowAttributes": {
+      "opcode": "3",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "CARD8",
+            "name": "backing_store",
+            "enum": "BackingStore",
+            "fieldType": "field"
+          },
+          {
+            "type": "VISUALID",
+            "name": "visual",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "class",
+            "enum": "WindowClass",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "bit_gravity",
+            "enum": "Gravity",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "win_gravity",
+            "enum": "Gravity",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD32",
+            "name": "backing_planes",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD32",
+            "name": "backing_pixel",
+            "fieldType": "field"
+          },
+          {
+            "type": "BOOL",
+            "name": "save_under",
+            "fieldType": "field"
+          },
+          {
+            "type": "BOOL",
+            "name": "map_is_installed",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "map_state",
+            "enum": "MapState",
+            "fieldType": "field"
+          },
+          {
+            "type": "BOOL",
+            "name": "override_redirect",
+            "fieldType": "field"
+          },
+          {
+            "type": "COLORMAP",
+            "name": "colormap",
+            "altenum": "Colormap",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD32",
+            "name": "all_event_masks",
+            "mask": "EventMask",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD32",
+            "name": "your_event_mask",
+            "mask": "EventMask",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "do_not_propagate_mask",
+            "mask": "EventMask",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "2",
+            "fieldType": "pad"
+          }
+        ]
+      }
+    },
+    "DestroyWindow": {
+      "opcode": "4",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "DestroySubwindows": {
+      "opcode": "5",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "ChangeSaveSet": {
+      "opcode": "6",
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "mode",
+          "enum": "SetMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "ReparentWindow": {
+      "opcode": "7",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "parent",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "MapWindow": {
+      "opcode": "8",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "MapSubwindows": {
+      "opcode": "9",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "UnmapWindow": {
+      "opcode": "10",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "UnmapSubwindows": {
+      "opcode": "11",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "ConfigureWindow": {
+      "opcode": "12",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "value_mask",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "value-mask-type": "CARD16",
+          "value-mask-name": "value_mask",
+          "value-list-name": "value_list",
+          "fieldType": "valueparam"
+        }
+      ]
+    },
+    "CirculateWindow": {
+      "opcode": "13",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "direction",
+          "enum": "Circulate",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "GetGeometry": {
+      "opcode": "14",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "CARD8",
+            "name": "depth",
+            "fieldType": "field"
+          },
+          {
+            "type": "WINDOW",
+            "name": "root",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "x",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "y",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "width",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "height",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "border_width",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "2",
+            "fieldType": "pad"
+          }
+        ]
+      }
+    },
+    "QueryTree": {
+      "opcode": "15",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "WINDOW",
+            "name": "root",
+            "fieldType": "field"
+          },
+          {
+            "type": "WINDOW",
+            "name": "parent",
+            "altenum": "Window",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "children_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "14",
+            "fieldType": "pad"
+          },
+          {
+            "type": "WINDOW",
+            "name": "children",
+            "fieldType": "list",
+            "fieldref": "children_len"
+          }
+        ]
+      }
+    },
+    "InternAtom": {
+      "opcode": "16",
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "only_if_exists",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "name_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "char",
+          "name": "name",
+          "fieldType": "list",
+          "fieldref": "name_len"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "ATOM",
+            "name": "atom",
+            "altenum": "Atom",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "GetAtomName": {
+      "opcode": "17",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "ATOM",
+          "name": "atom",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "name_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "22",
+            "fieldType": "pad"
+          },
+          {
+            "type": "char",
+            "name": "name",
+            "fieldType": "list",
+            "fieldref": "name_len"
+          }
+        ]
+      }
+    },
+    "ChangeProperty": {
+      "opcode": "18",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "mode",
+          "enum": "PropMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "property",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "type",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "format",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "3",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD32",
+          "name": "data_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "void",
+          "name": "data",
+          "fieldType": "list",
+          "op": {
+            "operation": "/",
+            "op": {
+              "operation": "*",
+              "fieldref": [
+                "data_len",
+                "format"
+              ]
+            },
+            "value": "8"
+          }
+        }
+      ]
+    },
+    "DeleteProperty": {
+      "opcode": "19",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "property",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "GetProperty": {
+      "opcode": "20",
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "delete",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "property",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "type",
+          "altenum": "GetPropertyType",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "long_offset",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "long_length",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "CARD8",
+            "name": "format",
+            "fieldType": "field"
+          },
+          {
+            "type": "ATOM",
+            "name": "type",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD32",
+            "name": "bytes_after",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD32",
+            "name": "value_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "12",
+            "fieldType": "pad"
+          },
+          {
+            "type": "void",
+            "name": "value",
+            "fieldType": "list",
+            "op": {
+              "operation": "*",
+              "fieldref": "value_len",
+              "op": {
+                "operation": "/",
+                "fieldref": "format",
+                "value": "8"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "ListProperties": {
+      "opcode": "21",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "atoms_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "22",
+            "fieldType": "pad"
+          },
+          {
+            "type": "ATOM",
+            "name": "atoms",
+            "fieldType": "list",
+            "fieldref": "atoms_len"
+          }
+        ]
+      }
+    },
+    "SetSelectionOwner": {
+      "opcode": "22",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "owner",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "selection",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "altenum": "Time",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "GetSelectionOwner": {
+      "opcode": "23",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "ATOM",
+          "name": "selection",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "WINDOW",
+            "name": "owner",
+            "altenum": "Window",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "ConvertSelection": {
+      "opcode": "24",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "requestor",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "selection",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "target",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "property",
+          "altenum": "Atom",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "altenum": "Time",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "SendEvent": {
+      "opcode": "25",
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "propagate",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "destination",
+          "altenum": "SendEventDest",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "event_mask",
+          "mask": "EventMask",
+          "fieldType": "field"
+        },
+        {
+          "type": "char",
+          "name": "event",
+          "fieldType": "list",
+          "value": "32"
+        }
+      ]
+    },
+    "GrabPointer": {
+      "opcode": "26",
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "owner_events",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "grab_window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "event_mask",
+          "mask": "EventMask",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "pointer_mode",
+          "enum": "GrabMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "keyboard_mode",
+          "enum": "GrabMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "confine_to",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CURSOR",
+          "name": "cursor",
+          "altenum": "Cursor",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "altenum": "Time",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "BYTE",
+            "name": "status",
+            "enum": "GrabStatus",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "UngrabPointer": {
+      "opcode": "27",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "altenum": "Time",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "GrabButton": {
+      "opcode": "28",
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "owner_events",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "grab_window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "event_mask",
+          "mask": "EventMask",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "pointer_mode",
+          "enum": "GrabMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "keyboard_mode",
+          "enum": "GrabMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "confine_to",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CURSOR",
+          "name": "cursor",
+          "altenum": "Cursor",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "button",
+          "enum": "ButtonIndex",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "modifiers",
+          "mask": "ModMask",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "UngrabButton": {
+      "opcode": "29",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "button",
+          "enum": "ButtonIndex",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "grab_window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "modifiers",
+          "mask": "ModMask",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "ChangeActivePointerGrab": {
+      "opcode": "30",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CURSOR",
+          "name": "cursor",
+          "altenum": "Cursor",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "altenum": "Time",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "event_mask",
+          "mask": "EventMask",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "GrabKeyboard": {
+      "opcode": "31",
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "owner_events",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "grab_window",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "altenum": "Time",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "pointer_mode",
+          "enum": "GrabMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "keyboard_mode",
+          "enum": "GrabMode",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "BYTE",
+            "name": "status",
+            "enum": "GrabStatus",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "UngrabKeyboard": {
+      "opcode": "32",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "altenum": "Time",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "GrabKey": {
+      "opcode": "33",
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "owner_events",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "grab_window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "modifiers",
+          "mask": "ModMask",
+          "fieldType": "field"
+        },
+        {
+          "type": "KEYCODE",
+          "name": "key",
+          "altenum": "Grab",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "pointer_mode",
+          "enum": "GrabMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "keyboard_mode",
+          "enum": "GrabMode",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "3",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "UngrabKey": {
+      "opcode": "34",
+      "field": [
+        {
+          "type": "KEYCODE",
+          "name": "key",
+          "altenum": "Grab",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "grab_window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "modifiers",
+          "mask": "ModMask",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        }
+      ]
+    },
+    "AllowEvents": {
+      "opcode": "35",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "mode",
+          "enum": "Allow",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "altenum": "Time",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "GrabServer": {
+      "opcode": "36"
+    },
+    "UngrabServer": {
+      "opcode": "37"
+    },
+    "QueryPointer": {
+      "opcode": "38",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "BOOL",
+            "name": "same_screen",
+            "fieldType": "field"
+          },
+          {
+            "type": "WINDOW",
+            "name": "root",
+            "fieldType": "field"
+          },
+          {
+            "type": "WINDOW",
+            "name": "child",
+            "altenum": "Window",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "root_x",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "root_y",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "win_x",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "win_y",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "mask",
+            "mask": "KeyButMask",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "2",
+            "fieldType": "pad"
+          }
+        ]
+      }
+    },
+    "GetMotionEvents": {
+      "opcode": "39",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "start",
+          "altenum": "Time",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "stop",
+          "altenum": "Time",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD32",
+            "name": "events_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "20",
+            "fieldType": "pad"
+          },
+          {
+            "type": "TIMECOORD",
+            "name": "events",
+            "fieldType": "list",
+            "fieldref": "events_len"
+          }
+        ]
+      }
+    },
+    "TranslateCoordinates": {
+      "opcode": "40",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "src_window",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "dst_window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "src_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "src_y",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "BOOL",
+            "name": "same_screen",
+            "fieldType": "field"
+          },
+          {
+            "type": "WINDOW",
+            "name": "child",
+            "altenum": "Window",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "dst_x",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "dst_y",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "WarpPointer": {
+      "opcode": "41",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "src_window",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "dst_window",
+          "altenum": "Window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "src_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "src_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "src_width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "src_height",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "dst_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "dst_y",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "SetInputFocus": {
+      "opcode": "42",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "revert_to",
+          "enum": "InputFocus",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "focus",
+          "altenum": "InputFocus",
+          "fieldType": "field"
+        },
+        {
+          "type": "TIMESTAMP",
+          "name": "time",
+          "altenum": "Time",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "GetInputFocus": {
+      "opcode": "43",
+      "reply": {
+        "field": [
+          {
+            "type": "CARD8",
+            "name": "revert_to",
+            "enum": "InputFocus",
+            "fieldType": "field"
+          },
+          {
+            "type": "WINDOW",
+            "name": "focus",
+            "altenum": "InputFocus",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "QueryKeymap": {
+      "opcode": "44",
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD8",
+            "name": "keys",
+            "fieldType": "list",
+            "value": "32"
+          }
+        ]
+      }
+    },
+    "OpenFont": {
+      "opcode": "45",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "FONT",
+          "name": "fid",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "name_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "char",
+          "name": "name",
+          "fieldType": "list",
+          "fieldref": "name_len"
+        }
+      ]
+    },
+    "CloseFont": {
+      "opcode": "46",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "FONT",
+          "name": "font",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "QueryFont": {
+      "opcode": "47",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "FONTABLE",
+          "name": "font",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CHARINFO",
+            "name": "min_bounds",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "4",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CHARINFO",
+            "name": "max_bounds",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "4",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "min_char_or_byte2",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "max_char_or_byte2",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "default_char",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "properties_len",
+            "fieldType": "field"
+          },
+          {
+            "type": "BYTE",
+            "name": "draw_direction",
+            "enum": "FontDraw",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "min_byte1",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "max_byte1",
+            "fieldType": "field"
+          },
+          {
+            "type": "BOOL",
+            "name": "all_chars_exist",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "font_ascent",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "font_descent",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD32",
+            "name": "char_infos_len",
+            "fieldType": "field"
+          },
+          {
+            "type": "FONTPROP",
+            "name": "properties",
+            "fieldType": "list",
+            "fieldref": "properties_len"
+          },
+          {
+            "type": "CHARINFO",
+            "name": "char_infos",
+            "fieldType": "list",
+            "fieldref": "char_infos_len"
+          }
+        ]
+      }
+    },
+    "QueryTextExtents": {
+      "opcode": "48",
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "odd_length",
+          "fieldType": "exprfield",
+          "op": {
+            "operation": "&amp;",
+            "fieldref": "string_len",
+            "value": "1"
+          }
+        },
+        {
+          "type": "FONTABLE",
+          "name": "font",
+          "fieldType": "field"
+        },
+        {
+          "type": "CHAR2B",
+          "name": "string",
+          "fieldType": "list"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "BYTE",
+            "name": "draw_direction",
+            "enum": "FontDraw",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "font_ascent",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "font_descent",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "overall_ascent",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "overall_descent",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT32",
+            "name": "overall_width",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT32",
+            "name": "overall_left",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT32",
+            "name": "overall_right",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "ListFonts": {
+      "opcode": "49",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "max_names",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "pattern_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "char",
+          "name": "pattern",
+          "fieldType": "list",
+          "fieldref": "pattern_len"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "names_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "22",
+            "fieldType": "pad"
+          },
+          {
+            "type": "STR",
+            "name": "names",
+            "fieldType": "list",
+            "fieldref": "names_len"
+          }
+        ]
+      }
+    },
+    "ListFontsWithInfo": {
+      "opcode": "50",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "max_names",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "pattern_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "char",
+          "name": "pattern",
+          "fieldType": "list",
+          "fieldref": "pattern_len"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "CARD8",
+            "name": "name_len",
+            "fieldType": "field"
+          },
+          {
+            "type": "CHARINFO",
+            "name": "min_bounds",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "4",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CHARINFO",
+            "name": "max_bounds",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "4",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "min_char_or_byte2",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "max_char_or_byte2",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "default_char",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "properties_len",
+            "fieldType": "field"
+          },
+          {
+            "type": "BYTE",
+            "name": "draw_direction",
+            "enum": "FontDraw",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "min_byte1",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "max_byte1",
+            "fieldType": "field"
+          },
+          {
+            "type": "BOOL",
+            "name": "all_chars_exist",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "font_ascent",
+            "fieldType": "field"
+          },
+          {
+            "type": "INT16",
+            "name": "font_descent",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD32",
+            "name": "replies_hint",
+            "fieldType": "field"
+          },
+          {
+            "type": "FONTPROP",
+            "name": "properties",
+            "fieldType": "list",
+            "fieldref": "properties_len"
+          },
+          {
+            "type": "char",
+            "name": "name",
+            "fieldType": "list",
+            "fieldref": "name_len"
+          }
+        ]
+      }
+    },
+    "SetFontPath": {
+      "opcode": "51",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "font_qty",
+          "fieldType": "field"
+        },
+        {
+          "type": "char",
+          "name": "path",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "GetFontPath": {
+      "opcode": "52",
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "path_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "22",
+            "fieldType": "pad"
+          },
+          {
+            "type": "STR",
+            "name": "path",
+            "fieldType": "list",
+            "fieldref": "path_len"
+          }
+        ]
+      }
+    },
+    "CreatePixmap": {
+      "opcode": "53",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "depth",
+          "fieldType": "field"
+        },
+        {
+          "type": "PIXMAP",
+          "name": "pid",
+          "fieldType": "field"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "FreePixmap": {
+      "opcode": "54",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "PIXMAP",
+          "name": "pixmap",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "CreateGC": {
+      "opcode": "55",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "cid",
+          "fieldType": "field"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "value-mask-type": "CARD32",
+          "value-mask-name": "value_mask",
+          "value-list-name": "value_list",
+          "fieldType": "valueparam"
+        }
+      ]
+    },
+    "ChangeGC": {
+      "opcode": "56",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "value-mask-type": "CARD32",
+          "value-mask-name": "value_mask",
+          "value-list-name": "value_list",
+          "fieldType": "valueparam"
+        }
+      ]
+    },
+    "CopyGC": {
+      "opcode": "57",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "src_gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "dst_gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "value_mask",
+          "mask": "GC",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "SetDashes": {
+      "opcode": "58",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "dash_offset",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "dashes_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "dashes",
+          "fieldType": "list",
+          "fieldref": "dashes_len"
+        }
+      ]
+    },
+    "SetClipRectangles": {
+      "opcode": "59",
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "ordering",
+          "enum": "ClipOrdering",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "clip_x_origin",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "clip_y_origin",
+          "fieldType": "field"
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "rectangles",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "FreeGC": {
+      "opcode": "60",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "ClearArea": {
+      "opcode": "61",
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "exposures",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "CopyArea": {
+      "opcode": "62",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "src_drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "dst_drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "src_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "src_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "dst_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "dst_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "CopyPlane": {
+      "opcode": "63",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "src_drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "dst_drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "src_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "src_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "dst_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "dst_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "bit_plane",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "PolyPoint": {
+      "opcode": "64",
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "coordinate_mode",
+          "enum": "CoordMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "POINT",
+          "name": "points",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "PolyLine": {
+      "opcode": "65",
+      "combine-adjacent": "true",
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "coordinate_mode",
+          "enum": "CoordMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "POINT",
+          "name": "points",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "PolySegment": {
+      "opcode": "66",
+      "combine-adjacent": "true",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "SEGMENT",
+          "name": "segments",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "PolyRectangle": {
+      "opcode": "67",
+      "combine-adjacent": "true",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "rectangles",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "PolyArc": {
+      "opcode": "68",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "ARC",
+          "name": "arcs",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "FillPoly": {
+      "opcode": "69",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "shape",
+          "enum": "PolyShape",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "coordinate_mode",
+          "enum": "CoordMode",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "POINT",
+          "name": "points",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "PolyFillRectangle": {
+      "opcode": "70",
+      "combine-adjacent": "true",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "RECTANGLE",
+          "name": "rectangles",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "PolyFillArc": {
+      "opcode": "71",
+      "combine-adjacent": "true",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "ARC",
+          "name": "arcs",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "PutImage": {
+      "opcode": "72",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "format",
+          "enum": "ImageFormat",
+          "fieldType": "field"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "dst_x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "dst_y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "left_pad",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "depth",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "BYTE",
+          "name": "data",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "GetImage": {
+      "opcode": "73",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "format",
+          "enum": "ImageFormat",
+          "fieldType": "field"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "plane_mask",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "CARD8",
+            "name": "depth",
+            "fieldType": "field"
+          },
+          {
+            "type": "VISUALID",
+            "name": "visual",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "20",
+            "fieldType": "pad"
+          },
+          {
+            "type": "BYTE",
+            "name": "data",
+            "fieldType": "list",
+            "op": {
+              "operation": "*",
+              "fieldref": "length",
+              "value": "4"
+            }
+          }
+        ]
+      }
+    },
+    "PolyText8": {
+      "opcode": "74",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "items",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "PolyText16": {
+      "opcode": "75",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "BYTE",
+          "name": "items",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "ImageText8": {
+      "opcode": "76",
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "string_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "char",
+          "name": "string",
+          "fieldType": "list",
+          "fieldref": "string_len"
+        }
+      ]
+    },
+    "ImageText16": {
+      "opcode": "77",
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "string_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "GCONTEXT",
+          "name": "gc",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "y",
+          "fieldType": "field"
+        },
+        {
+          "type": "CHAR2B",
+          "name": "string",
+          "fieldType": "list",
+          "fieldref": "string_len"
+        }
+      ]
+    },
+    "CreateColormap": {
+      "opcode": "78",
+      "field": [
+        {
+          "type": "BYTE",
+          "name": "alloc",
+          "enum": "ColormapAlloc",
+          "fieldType": "field"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "mid",
+          "fieldType": "field"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "VISUALID",
+          "name": "visual",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "FreeColormap": {
+      "opcode": "79",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "CopyColormapAndFree": {
+      "opcode": "80",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "mid",
+          "fieldType": "field"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "src_cmap",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "InstallColormap": {
+      "opcode": "81",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "UninstallColormap": {
+      "opcode": "82",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "ListInstalledColormaps": {
+      "opcode": "83",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "cmaps_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "22",
+            "fieldType": "pad"
+          },
+          {
+            "type": "COLORMAP",
+            "name": "cmaps",
+            "fieldType": "list",
+            "fieldref": "cmaps_len"
+          }
+        ]
+      }
+    },
+    "AllocColor": {
+      "opcode": "84",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "blue",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "red",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "green",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "blue",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "2",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD32",
+            "name": "pixel",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "AllocNamedColor": {
+      "opcode": "85",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "name_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "char",
+          "name": "name",
+          "fieldType": "list",
+          "fieldref": "name_len"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD32",
+            "name": "pixel",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "exact_red",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "exact_green",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "exact_blue",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "visual_red",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "visual_green",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "visual_blue",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "AllocColorCells": {
+      "opcode": "86",
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "contiguous",
+          "fieldType": "field"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "colors",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "planes",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "pixels_len",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "masks_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "20",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD32",
+            "name": "pixels",
+            "fieldType": "list",
+            "fieldref": "pixels_len"
+          },
+          {
+            "type": "CARD32",
+            "name": "masks",
+            "fieldType": "list",
+            "fieldref": "masks_len"
+          }
+        ]
+      }
+    },
+    "AllocColorPlanes": {
+      "opcode": "87",
+      "field": [
+        {
+          "type": "BOOL",
+          "name": "contiguous",
+          "fieldType": "field"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "colors",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "reds",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "greens",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "blues",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "pixels_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "2",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD32",
+            "name": "red_mask",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD32",
+            "name": "green_mask",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD32",
+            "name": "blue_mask",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "8",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD32",
+            "name": "pixels",
+            "fieldType": "list",
+            "fieldref": "pixels_len"
+          }
+        ]
+      }
+    },
+    "FreeColors": {
+      "opcode": "88",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "plane_mask",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "pixels",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "StoreColors": {
+      "opcode": "89",
+      "combine-adjacent": "true",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        },
+        {
+          "type": "COLORITEM",
+          "name": "items",
+          "fieldType": "list"
+        }
+      ]
+    },
+    "StoreNamedColor": {
+      "opcode": "90",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "flags",
+          "mask": "ColorFlag",
+          "fieldType": "field"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "pixel",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "name_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "char",
+          "name": "name",
+          "fieldType": "list",
+          "fieldref": "name_len"
+        }
+      ]
+    },
+    "QueryColors": {
+      "opcode": "91",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD32",
+          "name": "pixels",
+          "fieldType": "list"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "colors_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "22",
+            "fieldType": "pad"
+          },
+          {
+            "type": "RGB",
+            "name": "colors",
+            "fieldType": "list",
+            "fieldref": "colors_len"
+          }
+        ]
+      }
+    },
+    "LookupColor": {
+      "opcode": "92",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "COLORMAP",
+          "name": "cmap",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "name_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "char",
+          "name": "name",
+          "fieldType": "list",
+          "fieldref": "name_len"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "exact_red",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "exact_green",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "exact_blue",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "visual_red",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "visual_green",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "visual_blue",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "CreateCursor": {
+      "opcode": "93",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CURSOR",
+          "name": "cid",
+          "fieldType": "field"
+        },
+        {
+          "type": "PIXMAP",
+          "name": "source",
+          "fieldType": "field"
+        },
+        {
+          "type": "PIXMAP",
+          "name": "mask",
+          "altenum": "Pixmap",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "fore_red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "fore_green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "fore_blue",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "back_red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "back_green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "back_blue",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "x",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "y",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "CreateGlyphCursor": {
+      "opcode": "94",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CURSOR",
+          "name": "cid",
+          "fieldType": "field"
+        },
+        {
+          "type": "FONT",
+          "name": "source_font",
+          "fieldType": "field"
+        },
+        {
+          "type": "FONT",
+          "name": "mask_font",
+          "altenum": "Font",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "source_char",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "mask_char",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "fore_red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "fore_green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "fore_blue",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "back_red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "back_green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "back_blue",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "FreeCursor": {
+      "opcode": "95",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CURSOR",
+          "name": "cursor",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "RecolorCursor": {
+      "opcode": "96",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CURSOR",
+          "name": "cursor",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "fore_red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "fore_green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "fore_blue",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "back_red",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "back_green",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "back_blue",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "QueryBestSize": {
+      "opcode": "97",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "class",
+          "enum": "QueryShapeOf",
+          "fieldType": "field"
+        },
+        {
+          "type": "DRAWABLE",
+          "name": "drawable",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "width",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "height",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "width",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "height",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "QueryExtension": {
+      "opcode": "98",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "name_len",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "2",
+          "fieldType": "pad"
+        },
+        {
+          "type": "char",
+          "name": "name",
+          "fieldType": "list",
+          "fieldref": "name_len"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "BOOL",
+            "name": "present",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "major_opcode",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "first_event",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "first_error",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "ListExtensions": {
+      "opcode": "99",
+      "reply": {
+        "field": [
+          {
+            "type": "CARD8",
+            "name": "names_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "24",
+            "fieldType": "pad"
+          },
+          {
+            "type": "STR",
+            "name": "names",
+            "fieldType": "list",
+            "fieldref": "names_len"
+          }
+        ]
+      }
+    },
+    "ChangeKeyboardMapping": {
+      "opcode": "100",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "keycode_count",
+          "fieldType": "field"
+        },
+        {
+          "type": "KEYCODE",
+          "name": "first_keycode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "keysyms_per_keycode",
+          "fieldType": "field"
+        },
+        {
+          "type": "KEYSYM",
+          "name": "keysyms",
+          "fieldType": "list",
+          "op": {
+            "operation": "*",
+            "fieldref": [
+              "keycode_count",
+              "keysyms_per_keycode"
+            ]
+          }
+        }
+      ]
+    },
+    "GetKeyboardMapping": {
+      "opcode": "101",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "KEYCODE",
+          "name": "first_keycode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "count",
+          "fieldType": "field"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "BYTE",
+            "name": "keysyms_per_keycode",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "24",
+            "fieldType": "pad"
+          },
+          {
+            "type": "KEYSYM",
+            "name": "keysyms",
+            "fieldType": "list",
+            "fieldref": "length"
+          }
+        ]
+      }
+    },
+    "ChangeKeyboardControl": {
+      "opcode": "102",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "value-mask-type": "CARD32",
+          "value-mask-name": "value_mask",
+          "value-list-name": "value_list",
+          "fieldType": "valueparam"
+        }
+      ]
+    },
+    "GetKeyboardControl": {
+      "opcode": "103",
+      "reply": {
+        "field": [
+          {
+            "type": "BYTE",
+            "name": "global_auto_repeat",
+            "enum": "AutoRepeatMode",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD32",
+            "name": "led_mask",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "key_click_percent",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD8",
+            "name": "bell_percent",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "bell_pitch",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "bell_duration",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "2",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD8",
+            "name": "auto_repeats",
+            "fieldType": "list",
+            "value": "32"
+          }
+        ]
+      }
+    },
+    "Bell": {
+      "opcode": "104",
+      "field": [
+        {
+          "type": "INT8",
+          "name": "percent",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "ChangePointerControl": {
+      "opcode": "105",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "INT16",
+          "name": "acceleration_numerator",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "acceleration_denominator",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "threshold",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "do_acceleration",
+          "fieldType": "field"
+        },
+        {
+          "type": "BOOL",
+          "name": "do_threshold",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "GetPointerControl": {
+      "opcode": "106",
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "acceleration_numerator",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "acceleration_denominator",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "threshold",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "18",
+            "fieldType": "pad"
+          }
+        ]
+      }
+    },
+    "SetScreenSaver": {
+      "opcode": "107",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "INT16",
+          "name": "timeout",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "interval",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "prefer_blanking",
+          "enum": "Blanking",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "allow_exposures",
+          "enum": "Exposures",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "GetScreenSaver": {
+      "opcode": "108",
+      "reply": {
+        "field": [
+          {
+            "bytes": "1",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD16",
+            "name": "timeout",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "interval",
+            "fieldType": "field"
+          },
+          {
+            "type": "BYTE",
+            "name": "prefer_blanking",
+            "enum": "Blanking",
+            "fieldType": "field"
+          },
+          {
+            "type": "BYTE",
+            "name": "allow_exposures",
+            "enum": "Exposures",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "18",
+            "fieldType": "pad"
+          }
+        ]
+      }
+    },
+    "ChangeHosts": {
+      "opcode": "109",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "mode",
+          "enum": "HostMode",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "family",
+          "enum": "Family",
+          "fieldType": "field"
+        },
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD16",
+          "name": "address_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "char",
+          "name": "address",
+          "fieldType": "list",
+          "fieldref": "address_len"
+        }
+      ]
+    },
+    "ListHosts": {
+      "opcode": "110",
+      "reply": {
+        "field": [
+          {
+            "type": "BYTE",
+            "name": "mode",
+            "enum": "AccessControl",
+            "fieldType": "field"
+          },
+          {
+            "type": "CARD16",
+            "name": "hosts_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "22",
+            "fieldType": "pad"
+          },
+          {
+            "type": "HOST",
+            "name": "hosts",
+            "fieldType": "list",
+            "fieldref": "hosts_len"
+          }
+        ]
+      }
+    },
+    "SetAccessControl": {
+      "opcode": "111",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "mode",
+          "enum": "AccessControl",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "SetCloseDownMode": {
+      "opcode": "112",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "mode",
+          "enum": "CloseDown",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "KillClient": {
+      "opcode": "113",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "CARD32",
+          "name": "resource",
+          "altenum": "Kill",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "RotateProperties": {
+      "opcode": "114",
+      "field": [
+        {
+          "bytes": "1",
+          "fieldType": "pad"
+        },
+        {
+          "type": "WINDOW",
+          "name": "window",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD16",
+          "name": "atoms_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "INT16",
+          "name": "delta",
+          "fieldType": "field"
+        },
+        {
+          "type": "ATOM",
+          "name": "atoms",
+          "fieldType": "list",
+          "fieldref": "atoms_len"
+        }
+      ]
+    },
+    "ForceScreenSaver": {
+      "opcode": "115",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "mode",
+          "enum": "ScreenSaver",
+          "fieldType": "field"
+        }
+      ]
+    },
+    "SetPointerMapping": {
+      "opcode": "116",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "map_len",
+          "fieldType": "field"
+        },
+        {
+          "type": "CARD8",
+          "name": "map",
+          "fieldType": "list",
+          "fieldref": "map_len"
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "BYTE",
+            "name": "status",
+            "enum": "MappingStatus",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "GetPointerMapping": {
+      "opcode": "117",
+      "reply": {
+        "field": [
+          {
+            "type": "CARD8",
+            "name": "map_len",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "24",
+            "fieldType": "pad"
+          },
+          {
+            "type": "CARD8",
+            "name": "map",
+            "fieldType": "list",
+            "fieldref": "map_len"
+          }
+        ]
+      }
+    },
+    "SetModifierMapping": {
+      "opcode": "118",
+      "field": [
+        {
+          "type": "CARD8",
+          "name": "keycodes_per_modifier",
+          "fieldType": "field"
+        },
+        {
+          "type": "KEYCODE",
+          "name": "keycodes",
+          "fieldType": "list",
+          "op": {
+            "operation": "*",
+            "fieldref": "keycodes_per_modifier",
+            "value": "8"
+          }
+        }
+      ],
+      "reply": {
+        "field": [
+          {
+            "type": "BYTE",
+            "name": "status",
+            "enum": "MappingStatus",
+            "fieldType": "field"
+          }
+        ]
+      }
+    },
+    "GetModifierMapping": {
+      "opcode": "119",
+      "reply": {
+        "field": [
+          {
+            "type": "CARD8",
+            "name": "keycodes_per_modifier",
+            "fieldType": "field"
+          },
+          {
+            "bytes": "24",
+            "fieldType": "pad"
+          },
+          {
+            "type": "KEYCODE",
+            "name": "keycodes",
+            "fieldType": "list",
+            "op": {
+              "operation": "*",
+              "fieldref": "keycodes_per_modifier",
+              "value": "8"
+            }
+          }
+        ]
+      }
+    },
+    "NoOperation": {
+      "opcode": "127"
+    }
+  }
+}

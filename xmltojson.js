@@ -34,9 +34,7 @@ function parse(cb) {
 
   cb.onEndDocument(function() {
     ret = ret.xcb
-    write('xRequests.json', ret.request)
-    write('xEvents.json', ret.event)
-    write('xStructs.json', ret.struct)
+    write('xProtocol.json', ret)
   })
 }
 
