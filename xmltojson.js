@@ -1,28 +1,31 @@
 var xml = require('node-xml')
   , writeFile = require('fs').writeFileSync
   , write = function(file, obj) { writeFile(file, JSON.stringify(obj, null, 2)) }
-  , parser = new xml.SaxParser(parse)
   , ret = {}
-  , contexts = {}
+  , parser = new xml.SaxParser(parse)
+  , state = []
+  , acceptText = ['fieldref', 'bit', 'value', 'type']
+  , namedFields = ['request', 'reply', 'struct', 'event', 'enum', 'error', 'errorcopy', 'eventcopy', 'xidunion', 'union', 'xidtype', 'typedef']
+  , acceptFields = ['request', 'reply', 'struct', 'event', 'enum', 'error', 'errorcopy', 'eventcopy', 'union']
 
 function parse(cb) {
   var cur = ret
-    , stack = []
     , curList = []
-    , getCurContext = function() {
-      return stack[stack.length - 1] ? stack[stack.length - 1] : [function(){}, function(){}]
-    }
+
   cb.onStartElementNS(function(elem, attrs){
-    if (contexts[elem]) stack.push(contexts[elem])
-    cur = getCurContext()[0](elem, attrsToHash(attrs), cur, ret)
+    var parent = state[state.length - 1]
+    attrs = attrsToHash(attrs)
+    state.push(elem)
+    cur = namedFields.indexOf(elem) != -1 ? doPrimaryField(elem, attrs, cur, ret)
+    : acceptFields.indexOf(parent) != -1    ? doFieldType(elem, attrs, cur, ret)
+    : doSubField(elem, attrs, cur, ret)
     curList.push(cur)
   })
 
   cb.onEndElementNS(function(elem) {
     curList.pop()
     cur = curList[curList.length - 1]
-    getCurContext()[1](elem)
-    if (contexts[elem]) stack.pop(contexts[elem])
+    state.pop()
   })
 
   cb.onCharacters(function(chars){
@@ -30,20 +33,11 @@ function parse(cb) {
   })
 
   cb.onEndDocument(function() {
+    ret = ret.xcb
     write('xRequests.json', ret.request)
-//    write('xEvents.json', ret.event)
- //   write('xStructs.json', ret.struct)
+    write('xEvents.json', ret.event)
+    write('xStructs.json', ret.struct)
   })
-}
-
-function asHash(obj, attr) {
-  if (!obj[attr]) obj[attr] = {}
-  return obj[attr]
-}
-
-function asArray(obj, attr) {
-  if (!obj[attr]) obj[attr] = [] 
-  return obj[attr]
 }
 
 function attrsToHash(attrs) {
@@ -52,13 +46,6 @@ function attrsToHash(attrs) {
     ret[val[0]] = val[1]
   })
   return ret
-}
-
-function doFieldType(elem, attrs, cur, ret) {
-  var field = asArray(cur, 'field')
-  attrs.fieldType = elem
-  field.push(attrs)
-  return attrs
 }
 
 var text = (function(){
@@ -80,9 +67,16 @@ var text = (function(){
 
 })()
 
-function doSubField(elem, attrs, cur, ret, c) {
-  if (elem == 'fieldref' || elem == 'value') return text.receive(cur, elem)
-  if (cur[elem]) console.log('overwriting?', elem, c, 'currently:', cur[elem])
+function doFieldType(elem, attrs, cur, ret) {
+  var field = !cur.field ? cur.field = [] : cur.field
+  attrs.fieldType = elem
+  field.push(attrs)
+  return attrs
+}
+
+function doSubField(elem, attrs, cur, ret) {
+  if (acceptText.indexOf(elem) != -1) return text.receive(cur, elem)
+  if (cur[elem]) console.log('overwriting?', elem, 'currently:', cur[elem], state)
   cur[elem] = attrs
   if (elem == 'op') {
     attrs.operation = attrs.op
@@ -91,35 +85,11 @@ function doSubField(elem, attrs, cur, ret, c) {
   return cur[elem]
 }
 
-contexts.request = (function() {
-var state = []
-
-return [function request(elem, attrs, cur, ret) {
-  var last = state[state.length - 1]
-  state.push(elem)
-  if (elem == 'request') {
-    var reqs = asHash(ret, 'request')
-      , name = attrs.name
-    delete attrs.name
-    reqs[name] = attrs
-    return reqs[name]
-  }
-  if (elem == 'reply') {
-    return asHash(cur, 'reply')
-  }
-  else {
-    return (last == 'request' || last == 'reply') ? doFieldType(elem, attrs, cur, ret) : doSubField(elem, attrs, cur, ret, state)
-  }
-}, function endReq(elem) {
-  state.pop()
-}]
-})()
-
-contexts.struct = [function struct() {
-}, function(){}]
-
-contexts.event = [function event() {
-
-}, function(){}]
+function doPrimaryField(elem, attrs, cur, ret) {
+  var obj = !cur[elem] ? cur[elem] = {} : cur[elem]
+    , name = elem == 'typedef' ? attrs.newname : attrs.name
+  delete attrs.name
+  return name ? (obj[name] = attrs) : obj
+}
 
 parser.parseFile('xproto.xml')

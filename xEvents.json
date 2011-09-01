@@ -1,313 +1,1073 @@
 {
   "KeyPress": {
-    "field": {
-      "detail": "KEYCODE",
-      "time": "TIMESTAMP",
-      "root": "WINDOW",
-      "event": "WINDOW",
-      "child": "WINDOW",
-      "root_x": "INT16",
-      "root_y": "INT16",
-      "event_x": "INT16",
-      "event_y": "INT16",
-      "state": "CARD16",
-      "same_screen": "BOOL"
-    },
-    "number": "2"
+    "number": "2",
+    "field": [
+      {
+        "type": "KEYCODE",
+        "name": "detail",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "root",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "child",
+        "altenum": "Window",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "root_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "root_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "event_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "event_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "state",
+        "mask": "KeyButMask",
+        "fieldType": "field"
+      },
+      {
+        "type": "BOOL",
+        "name": "same_screen",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      }
+    ]
   },
   "ButtonPress": {
-    "field": {
-      "detail": "BUTTON",
-      "time": "TIMESTAMP",
-      "root": "WINDOW",
-      "event": "WINDOW",
-      "child": "WINDOW",
-      "root_x": "INT16",
-      "root_y": "INT16",
-      "event_x": "INT16",
-      "event_y": "INT16",
-      "state": "CARD16",
-      "same_screen": "BOOL"
-    },
-    "number": "4"
+    "number": "4",
+    "field": [
+      {
+        "type": "BUTTON",
+        "name": "detail",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "root",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "child",
+        "altenum": "Window",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "root_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "root_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "event_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "event_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "state",
+        "mask": "KeyButMask",
+        "fieldType": "field"
+      },
+      {
+        "type": "BOOL",
+        "name": "same_screen",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      }
+    ]
   },
   "MotionNotify": {
-    "field": {
-      "detail": "BYTE",
-      "time": "TIMESTAMP",
-      "root": "WINDOW",
-      "event": "WINDOW",
-      "child": "WINDOW",
-      "root_x": "INT16",
-      "root_y": "INT16",
-      "event_x": "INT16",
-      "event_y": "INT16",
-      "state": "CARD16",
-      "same_screen": "BOOL"
-    },
-    "number": "6"
+    "number": "6",
+    "field": [
+      {
+        "type": "BYTE",
+        "name": "detail",
+        "enum": "Motion",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "root",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "child",
+        "altenum": "Window",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "root_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "root_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "event_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "event_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "state",
+        "mask": "KeyButMask",
+        "fieldType": "field"
+      },
+      {
+        "type": "BOOL",
+        "name": "same_screen",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      }
+    ]
   },
   "EnterNotify": {
-    "field": {
-      "detail": "BYTE",
-      "time": "TIMESTAMP",
-      "root": "WINDOW",
-      "event": "WINDOW",
-      "child": "WINDOW",
-      "root_x": "INT16",
-      "root_y": "INT16",
-      "event_x": "INT16",
-      "event_y": "INT16",
-      "state": "CARD16",
-      "mode": "BYTE",
-      "same_screen_focus": "BYTE"
-    },
-    "number": "7"
+    "number": "7",
+    "field": [
+      {
+        "type": "BYTE",
+        "name": "detail",
+        "enum": "NotifyDetail",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "root",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "child",
+        "altenum": "Window",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "root_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "root_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "event_x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "event_y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "state",
+        "mask": "KeyButMask",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "mode",
+        "enum": "NotifyMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "same_screen_focus",
+        "fieldType": "field"
+      }
+    ]
   },
   "FocusIn": {
-    "field": {
-      "detail": "BYTE",
-      "event": "WINDOW",
-      "mode": "BYTE"
-    },
-    "number": "9"
+    "number": "9",
+    "field": [
+      {
+        "type": "BYTE",
+        "name": "detail",
+        "enum": "NotifyDetail",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "mode",
+        "enum": "NotifyMode",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "3",
+        "fieldType": "pad"
+      }
+    ]
   },
   "KeymapNotify": {
-    "list": {
-      "keys": "CARD8"
-    },
     "number": "11",
-    "no-sequence-number": "true"
+    "no-sequence-number": "true",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "keys",
+        "fieldType": "list",
+        "value": "31"
+      }
+    ]
   },
   "Expose": {
-    "field": {
-      "window": "WINDOW",
-      "x": "CARD16",
-      "y": "CARD16",
-      "width": "CARD16",
-      "height": "CARD16",
-      "count": "CARD16"
-    },
-    "number": "12"
+    "number": "12",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "count",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      }
+    ]
   },
   "GraphicsExposure": {
-    "field": {
-      "drawable": "DRAWABLE",
-      "x": "CARD16",
-      "y": "CARD16",
-      "width": "CARD16",
-      "height": "CARD16",
-      "minor_opcode": "CARD16",
-      "count": "CARD16",
-      "major_opcode": "CARD8"
-    },
-    "number": "13"
+    "number": "13",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "minor_opcode",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "count",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "major_opcode",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "3",
+        "fieldType": "pad"
+      }
+    ]
   },
   "NoExposure": {
-    "field": {
-      "drawable": "DRAWABLE",
-      "minor_opcode": "CARD16",
-      "major_opcode": "CARD8"
-    },
-    "number": "14"
+    "number": "14",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "DRAWABLE",
+        "name": "drawable",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "minor_opcode",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "major_opcode",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      }
+    ]
   },
   "VisibilityNotify": {
-    "field": {
-      "window": "WINDOW",
-      "state": "BYTE"
-    },
-    "number": "15"
+    "number": "15",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "state",
+        "enum": "Visibility",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "3",
+        "fieldType": "pad"
+      }
+    ]
   },
   "CreateNotify": {
-    "field": {
-      "parent": "WINDOW",
-      "window": "WINDOW",
-      "x": "INT16",
-      "y": "INT16",
-      "width": "CARD16",
-      "height": "CARD16",
-      "border_width": "CARD16",
-      "override_redirect": "BOOL"
-    },
-    "number": "16"
+    "number": "16",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "parent",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "border_width",
+        "fieldType": "field"
+      },
+      {
+        "type": "BOOL",
+        "name": "override_redirect",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      }
+    ]
   },
   "DestroyNotify": {
-    "field": {
-      "event": "WINDOW",
-      "window": "WINDOW"
-    },
-    "number": "17"
+    "number": "17",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      }
+    ]
   },
   "UnmapNotify": {
-    "field": {
-      "event": "WINDOW",
-      "window": "WINDOW",
-      "from_configure": "BOOL"
-    },
-    "number": "18"
+    "number": "18",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "BOOL",
+        "name": "from_configure",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "3",
+        "fieldType": "pad"
+      }
+    ]
   },
   "MapNotify": {
-    "field": {
-      "event": "WINDOW",
-      "window": "WINDOW",
-      "override_redirect": "BOOL"
-    },
-    "number": "19"
+    "number": "19",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "BOOL",
+        "name": "override_redirect",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "3",
+        "fieldType": "pad"
+      }
+    ]
   },
   "MapRequest": {
-    "field": {
-      "parent": "WINDOW",
-      "window": "WINDOW"
-    },
-    "number": "20"
+    "number": "20",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "parent",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      }
+    ]
   },
   "ReparentNotify": {
-    "field": {
-      "event": "WINDOW",
-      "window": "WINDOW",
-      "parent": "WINDOW",
-      "x": "INT16",
-      "y": "INT16",
-      "override_redirect": "BOOL"
-    },
-    "number": "21"
+    "number": "21",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "parent",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "BOOL",
+        "name": "override_redirect",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "3",
+        "fieldType": "pad"
+      }
+    ]
   },
   "ConfigureNotify": {
-    "field": {
-      "event": "WINDOW",
-      "window": "WINDOW",
-      "above_sibling": "WINDOW",
-      "x": "INT16",
-      "y": "INT16",
-      "width": "CARD16",
-      "height": "CARD16",
-      "border_width": "CARD16",
-      "override_redirect": "BOOL"
-    },
-    "number": "22"
+    "number": "22",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "above_sibling",
+        "altenum": "Window",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "border_width",
+        "fieldType": "field"
+      },
+      {
+        "type": "BOOL",
+        "name": "override_redirect",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      }
+    ]
   },
   "ConfigureRequest": {
-    "field": {
-      "stack_mode": "BYTE",
-      "parent": "WINDOW",
-      "window": "WINDOW",
-      "sibling": "WINDOW",
-      "x": "INT16",
-      "y": "INT16",
-      "width": "CARD16",
-      "height": "CARD16",
-      "border_width": "CARD16",
-      "value_mask": "CARD16"
-    },
-    "number": "23"
+    "number": "23",
+    "field": [
+      {
+        "type": "BYTE",
+        "name": "stack_mode",
+        "enum": "StackMode",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "parent",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "sibling",
+        "altenum": "Window",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "border_width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "value_mask",
+        "mask": "ConfigWindow",
+        "fieldType": "field"
+      }
+    ]
   },
   "GravityNotify": {
-    "field": {
-      "event": "WINDOW",
-      "window": "WINDOW",
-      "x": "INT16",
-      "y": "INT16"
-    },
-    "number": "24"
+    "number": "24",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "x",
+        "fieldType": "field"
+      },
+      {
+        "type": "INT16",
+        "name": "y",
+        "fieldType": "field"
+      }
+    ]
   },
   "ResizeRequest": {
-    "field": {
-      "window": "WINDOW",
-      "width": "CARD16",
-      "height": "CARD16"
-    },
-    "number": "25"
+    "number": "25",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "width",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD16",
+        "name": "height",
+        "fieldType": "field"
+      }
+    ]
   },
   "CirculateNotify": {
-    "field": {
-      "event": "WINDOW",
-      "window": "WINDOW",
-      "place": "BYTE"
-    },
-    "number": "26"
+    "number": "26",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "event",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "4",
+        "fieldType": "pad"
+      },
+      {
+        "type": "BYTE",
+        "name": "place",
+        "enum": "Place",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "3",
+        "fieldType": "pad"
+      }
+    ]
   },
   "PropertyNotify": {
-    "field": {
-      "window": "WINDOW",
-      "atom": "ATOM",
-      "time": "TIMESTAMP",
-      "state": "BYTE"
-    },
-    "number": "28"
+    "number": "28",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "atom",
+        "fieldType": "field"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "state",
+        "enum": "Property",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "3",
+        "fieldType": "pad"
+      }
+    ]
   },
   "SelectionClear": {
-    "field": {
-      "time": "TIMESTAMP",
-      "owner": "WINDOW",
-      "selection": "ATOM"
-    },
-    "number": "29"
+    "number": "29",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "owner",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "selection",
+        "fieldType": "field"
+      }
+    ]
   },
   "SelectionRequest": {
-    "field": {
-      "time": "TIMESTAMP",
-      "owner": "WINDOW",
-      "requestor": "WINDOW",
-      "selection": "ATOM",
-      "target": "ATOM",
-      "property": "ATOM"
-    },
-    "number": "30"
+    "number": "30",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "altenum": "Time",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "owner",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "requestor",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "selection",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "target",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "property",
+        "altenum": "Atom",
+        "fieldType": "field"
+      }
+    ]
   },
   "SelectionNotify": {
-    "field": {
-      "time": "TIMESTAMP",
-      "requestor": "WINDOW",
-      "selection": "ATOM",
-      "target": "ATOM",
-      "property": "ATOM"
-    },
-    "number": "31"
+    "number": "31",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "TIMESTAMP",
+        "name": "time",
+        "altenum": "Time",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "requestor",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "selection",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "target",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "property",
+        "altenum": "Atom",
+        "fieldType": "field"
+      }
+    ]
   },
   "ColormapNotify": {
-    "field": {
-      "window": "WINDOW",
-      "colormap": "COLORMAP",
-      "new": "BOOL",
-      "state": "BYTE"
-    },
-    "number": "32"
+    "number": "32",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "COLORMAP",
+        "name": "colormap",
+        "altenum": "Colormap",
+        "fieldType": "field"
+      },
+      {
+        "type": "BOOL",
+        "name": "new",
+        "fieldType": "field"
+      },
+      {
+        "type": "BYTE",
+        "name": "state",
+        "enum": "ColormapState",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "2",
+        "fieldType": "pad"
+      }
+    ]
   },
   "ClientMessage": {
-    "field": {
-      "format": "CARD8",
-      "window": "WINDOW",
-      "type": "ATOM",
-      "data": "ClientMessageData"
-    },
-    "number": "33"
+    "number": "33",
+    "field": [
+      {
+        "type": "CARD8",
+        "name": "format",
+        "fieldType": "field"
+      },
+      {
+        "type": "WINDOW",
+        "name": "window",
+        "fieldType": "field"
+      },
+      {
+        "type": "ATOM",
+        "name": "type",
+        "fieldType": "field"
+      },
+      {
+        "type": "ClientMessageData",
+        "name": "data",
+        "fieldType": "field"
+      }
+    ]
   },
   "MappingNotify": {
-    "field": {
-      "request": "BYTE",
-      "first_keycode": "KEYCODE",
-      "count": "CARD8"
-    },
-    "number": "34"
-  },
-  "KeyRelease": {
-    "number": "3",
-    "ref": "KeyPress"
-  },
-  "ButtonRelease": {
-    "number": "5",
-    "ref": "ButtonPress"
-  },
-  "LeaveNotify": {
-    "number": "8",
-    "ref": "EnterNotify"
-  },
-  "FocusOut": {
-    "number": "10",
-    "ref": "FocusIn"
-  },
-  "CirculateRequest": {
-    "number": "27",
-    "ref": "CirculateNotify"
+    "number": "34",
+    "field": [
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      },
+      {
+        "type": "BYTE",
+        "name": "request",
+        "enum": "Mapping",
+        "fieldType": "field"
+      },
+      {
+        "type": "KEYCODE",
+        "name": "first_keycode",
+        "fieldType": "field"
+      },
+      {
+        "type": "CARD8",
+        "name": "count",
+        "fieldType": "field"
+      },
+      {
+        "bytes": "1",
+        "fieldType": "pad"
+      }
+    ]
   }
 }
