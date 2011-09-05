@@ -38,4 +38,36 @@
   , "char":    "char"
   , "void":    "char"
   }
+, "valuemaskEnum":
+  { "CreateWindow": "CW"
+  , "CreateGC":     "GC"
+  }
+, "packTypes":
+  { "BYTE":    "C"
+  , "BOOL":    "C"
+  , "CARD8":   "C"
+  , "CARD16":  "S"
+  , "CARD32":  "L"
+  , "INT8":    "C"
+  , "INT16":   "s"
+  , "INT32":   "l"
+  , "char":    "C"
+  , "void":    "char"
+  , "pad":     "x"
+  , "WINDOW":     "L"
+  , "GCONTEXT":   "L"
+  , "DRAWABLE":   "L"
+  , "PIXMAP":     "L"
+  , "CURSOR":     "L"
+  , "FONT":       "L"
+  , "COLORMAP":   "L"
+  , "FONTABLE":   "L"
+  , "BUTTON":     "C"
+  , "KEYCODE":    "C"
+  , "ATOM":       "L"
+  , "DRAWABLE":   "L"
+  , "COLORMAP":   "L"
+  , "VISUALID":   "L"
+  , "KEYSYM":     "L"
+  }
 }
