@@ -69,5 +69,6 @@
   , "COLORMAP":   "L"
   , "VISUALID":   "L"
   , "KEYSYM":     "L"
+  , "TIMESTAMP":  "L"
   }
 }
